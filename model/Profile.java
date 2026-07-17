@@ -1,5 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
+package model;
 
 /**
  * represent the user's profile

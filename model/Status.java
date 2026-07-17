@@ -1,3 +1,5 @@
+package model;
+
 /**
  * represents the status of a media, which are planned, in progress, and completed
  */

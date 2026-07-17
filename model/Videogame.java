@@ -1,3 +1,5 @@
+package model;
+
 /**
  * represents a videogame entry
  */
@@ -19,7 +21,7 @@ public class Videogame extends Media {
      */
     public Videogame(String title, String developer, int year, String description, int hoursPlayed, Status status)
     {
-        super("Videogame", status);
+        super("model.Videogame", status);
         this.title = title;
         this.developer = developer;
         this.year = year;

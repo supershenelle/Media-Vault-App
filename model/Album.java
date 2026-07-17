@@ -1,3 +1,5 @@
+package model;
+
 /**
  * represents the album of a music artist
  */
@@ -135,7 +137,7 @@ public class Album {
      */
     public String displayInfo()
     {
-        return "Album: " + title +
+        return "model.Album: " + title +
                 "\nGenre: " + genre +
                 "\nYear: " + year +
                 "\nProgress: " + songsListened + "/" + trackCount + "songs\n";

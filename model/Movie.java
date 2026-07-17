@@ -1,3 +1,5 @@
+package model;
+
 /**
  * represents a movie entry
  */
@@ -17,7 +19,7 @@ public class Movie extends Media {
      */
     public Movie(String title, String director, int year, String description, Status status)
     {
-        super("Movie", status);
+        super("model.Movie", status);
         this.title = title;
         this.director = director;
         this.year = year;

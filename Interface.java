@@ -1,3 +1,7 @@
+import model.Media;
+import model.Profile;
+import model.Status;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -188,9 +192,9 @@ public class Interface {
         switch(choice)
         {
             case "1":
-                return "Movie";
+                return "model.Movie";
             case "2":
-                return "Videogame";
+                return "model.Videogame";
             case "3":
                 return "Music Artist";
         }

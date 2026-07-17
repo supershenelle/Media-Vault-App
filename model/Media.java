@@ -1,3 +1,5 @@
+package model;
+
 /**
  * represents all shared media behavior and where ratings and reviews happen
  */
@@ -129,7 +131,7 @@ public abstract class Media {
         String info = "";
 
         info += "Type: " + type + "\n";
-        info += "Status: " + status + "\n";
+        info += "model.Status: " + status + "\n";
         info += getSpecificInfo();
 
         if(status == Status.COMPLETED)

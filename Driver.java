@@ -1,3 +1,5 @@
+import model.*;
+
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -40,8 +42,8 @@ public class Driver {
                     profile = new Profile(username, displayName, bio);
                     profileCreated = true;
                     library = profile.getLibrary();
-                    films = library.getRecentTitles("Movie");
-                    games = library.getRecentTitles("Videogame");
+                    films = library.getRecentTitles("model.Movie");
+                    games = library.getRecentTitles("model.Videogame");
                     music = library.getRecentArtistDiscography("Music Artist");
 
                     Interface.displayProfile(profile, films, games, music);
@@ -61,7 +63,7 @@ public class Driver {
 
                                 switch(mediaChoice)
                                 {
-                                    case "Movie":
+                                    case "model.Movie":
                                         System.out.println("");
                                         Interface.divider1();
                                         Interface.printCentered("=== ADDING FILM ENTRY ===");
@@ -83,7 +85,7 @@ public class Driver {
                                         System.out.println("");
                                         break;
 
-                                    case "Videogame":
+                                    case "model.Videogame":
                                         System.out.println("");
                                         Interface.divider1();
                                         Interface.printCentered("=== ADDING GAME ENTRY ===");
@@ -135,7 +137,7 @@ public class Driver {
                                         // create the albums (SHEN KAW NA BAHALA SA INTERFACE NETO)
                                         for(int i = 1; i <= albumCount; i++)
                                         {
-                                            System.out.println("--- Input Album " + i + " --------------");
+                                            System.out.println("--- Input model.Album " + i + " --------------");
 
                                             System.out.print("   -->    Title: ");
                                             String title = scanner.nextLine();
@@ -156,8 +158,8 @@ public class Driver {
                                         System.out.println("");
                                         break;
                                 } // switch mediaChoice
-                                films = library.getRecentTitles("Movie");
-                                games = library.getRecentTitles("Videogame");
+                                films = library.getRecentTitles("model.Movie");
+                                games = library.getRecentTitles("model.Videogame");
                                 music = library.getRecentArtistDiscography("Music Artist");
                                 Interface.displayProfile(profile, films, games, music);
                                 break;
@@ -173,10 +175,10 @@ public class Driver {
                                 // cuz string is immutable, magagalaw remove type variable so we make anotha variable for displaying
                                 // DISPLAY PURPOSES ONLY
                                 String removeLabel;
-                                if (removeType.equals("Movie"))
+                                if (removeType.equals("model.Movie"))
                                     removeLabel = "FILM";
 
-                                else if (removeType.equals("Videogame"))
+                                else if (removeType.equals("model.Videogame"))
                                     removeLabel = "GAME";
 
                                 else
@@ -189,9 +191,9 @@ public class Driver {
                                 Interface.divider2();
 
                                 // display yung napiling media type
-                                if (removeType.equals("Movie"))
+                                if (removeType.equals("model.Movie"))
                                     library.displayMovies();
-                                else if (removeType.equals("Videogame"))
+                                else if (removeType.equals("model.Videogame"))
                                     library.displayGames();
                                 else
                                     library.displayArtists();
@@ -214,8 +216,8 @@ public class Driver {
                                 }
                                 Interface.divider1();
                                 System.out.println("");
-                                films = library.getRecentTitles("Movie");
-                                games = library.getRecentTitles("Videogame");
+                                films = library.getRecentTitles("model.Movie");
+                                games = library.getRecentTitles("model.Videogame");
                                 music = library.getRecentArtistDiscography("Music Artist");
                                 Interface.displayProfile(profile, films, games, music);
                                 break;
@@ -339,10 +341,10 @@ public class Driver {
                                 else
                                 {
                                     // display the chosen media type
-                                    if (updateType.equals("Movie"))
+                                    if (updateType.equals("model.Movie"))
                                         library.displayMovies();
 
-                                    else if (updateType.equals("Videogame"))
+                                    else if (updateType.equals("model.Videogame"))
                                         library.displayGames();
 
                                     else
@@ -432,7 +434,7 @@ public class Driver {
                                 //input validation
                                 while (logAlbum == null)
                                 {
-                                    System.out.println("ERROR: Album not found for this artist.");
+                                    System.out.println("ERROR: model.Album not found for this artist.");
                                     System.out.print("   -->    Enter album title to update: ");
                                     logAlbumTitle = scanner.nextLine();
                                     logAlbum = logArtist.findAlbum(logAlbumTitle);
