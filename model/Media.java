@@ -141,4 +141,9 @@ public abstract class Media {
         }
         return info;
     }
+
+    @Override
+    public String toString() {
+        return "[" + getType() + "] " + getTitle() + " - " + getStatus().getDisplay();
+    }
 }

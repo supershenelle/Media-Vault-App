@@ -1,11 +1,15 @@
 // controller/loginController.java
 package controller;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Profile;
 import view.loginView;
 import view.mainView;
 
+import java.io.IOException;
 import java.util.List;
 
 public class loginController {
@@ -40,7 +44,19 @@ public class loginController {
         }
 
         // success — switch scene to main app
-        mainView mainView = new mainView(match.getLibrary());
-        stage.setScene(mainView.getScene());
+//        mainView mainView = new mainView(match.getLibrary());
+//        stage.setScene(mainView.getScene());
+
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView2.fxml"));
+            Parent root = loader.load();
+
+            mainView2Controller controller = loader.getController();
+            controller.init(match, stage);
+
+            stage.setScene(new Scene(root, 800, 600));
+
+
     }
+
 }

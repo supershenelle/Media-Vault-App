@@ -6,13 +6,14 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Library;
+import model.Media;
 import model.Profile;
 
 public class mainView2Controller {
     @FXML private Label usernameLabel;
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;
-    @FXML private ListView<String> library;
+    @FXML private ListView<Media> library;
 
     @FXML private Button addButton;
     @FXML private Button removeButton;
@@ -26,7 +27,7 @@ public class mainView2Controller {
     private Profile profile;
     private Stage stage;
 
-    public void initialize(Profile profile, Stage stage) {
+    public void init(Profile profile, Stage stage) {
         this.profile = profile;
         this.stage = stage;
         Library lib = profile.getLibrary();
@@ -34,7 +35,8 @@ public class mainView2Controller {
         usernameLabel.setText("Username: @" + profile.getUsername());
         displayNameLabel.setText("Display Name: " + profile.getDisplayName());
         bioLabel.setText("Bio: " + profile.getBio());
-        library.getItems().addAll(lib.getEntries())
+        library.getItems().clear();
+        library.getItems().addAll(lib.getEntries());
     }
 
     private void handleAdd() {

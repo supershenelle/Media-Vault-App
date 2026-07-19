@@ -25,11 +25,10 @@ public class MediaVaultApp extends Application {
         primaryStage.show();
 
         /*testing ko lang mainview2...
-        Parent root = FXMLLoader.load(getClass().getResource("mainView2.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/mainView2.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-
          */
 
     }
