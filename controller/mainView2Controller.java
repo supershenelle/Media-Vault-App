@@ -4,6 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.stage.Stage;
+import model.Library;
+import model.Profile;
 
 public class mainView2Controller {
     @FXML private Label usernameLabel;
@@ -19,4 +22,50 @@ public class mainView2Controller {
     @FXML private Button updateDiscographyButton;
     @FXML private Button summaryButton;
     @FXML private Button logOutButton;
+
+    private Profile profile;
+    private Stage stage;
+
+    public void initialize(Profile profile, Stage stage) {
+        this.profile = profile;
+        this.stage = stage;
+        Library lib = profile.getLibrary();
+
+        usernameLabel.setText("Username: @" + profile.getUsername());
+        displayNameLabel.setText("Display Name: " + profile.getDisplayName());
+        bioLabel.setText("Bio: " + profile.getBio());
+        library.getItems().addAll(lib.getEntries())
+    }
+
+    private void handleAdd() {
+
+    }
+
+    private void handleRemove() {
+
+    }
+
+    private void handleFilter() {
+
+    }
+
+    private void handleRate() {
+
+    }
+
+    private void handleUpdateStatus() {
+
+    }
+
+    private void handleUpdateDiscography() {
+
+    }
+
+    private void handleSummary() {
+
+    }
+
+    private void handleLogout() {
+
+    }
 }
