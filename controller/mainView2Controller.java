@@ -39,35 +39,35 @@ public class mainView2Controller {
         library.getItems().addAll(lib.getEntries());
     }
 
-    private void handleAdd() {
+    public void handleAdd() {
 
     }
 
-    private void handleRemove() {
+    public void handleRemove() {
 
     }
 
-    private void handleFilter() {
+    public void handleFilter() {
 
     }
 
-    private void handleRate() {
+    public void handleRate() {
 
     }
 
-    private void handleUpdateStatus() {
+    public void handleUpdateStatus() {
 
     }
 
-    private void handleUpdateDiscography() {
+    public void handleUpdateDiscography() {
 
     }
 
-    private void handleSummary() {
+    public void handleSummary() {
 
     }
 
-    private void handleLogout() {
+    public void handleLogout() {
 
     }
 }

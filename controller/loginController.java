@@ -48,13 +48,18 @@ public class loginController {
 //        stage.setScene(mainView.getScene());
 
 
+        try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView2.fxml"));
             Parent root = loader.load();
 
             mainView2Controller controller = loader.getController();
             controller.init(match, stage);
 
-            stage.setScene(new Scene(root, 800, 600));
+            stage.setScene(new Scene(root));
+        } catch (IOException e) {
+            e.printStackTrace();
+            loginView.getErrorLabel().setText("Failed to load main view.");
+        }
 
 
     }
