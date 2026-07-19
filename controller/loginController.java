@@ -18,7 +18,7 @@ public class loginController {
     private List<Profile> profiles; // wherever your saved profiles come from
 
     public loginController(SceneController sceneController, loginView loginView, List<Profile> profiles) {
-        this.sceneController = SceneController;
+        this.sceneController = sceneController;
         this.loginView = loginView;
         this.profiles = profiles;
 
@@ -44,7 +44,7 @@ public class loginController {
         }
 
         // success — switch scene to main app
-        sceneController.showMainView();
+        sceneController.showMainView(match);
 //        mainView mainView = new mainView(match.getLibrary());
 //        stage.setScene(mainView.getScene());
 

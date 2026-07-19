@@ -33,7 +33,7 @@ public class SceneController {
             Parent root = loader.load();
 
             mainView2Controller controller = loader.getController();
-            controller.init(profile, this);
+            controller.init(profile, stage);
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
