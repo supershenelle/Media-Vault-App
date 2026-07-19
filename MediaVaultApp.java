@@ -1,4 +1,5 @@
 // MediaVaultApp.java
+import controller.SceneController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -17,19 +18,17 @@ public class MediaVaultApp extends Application {
         List<Profile> profiles = new ArrayList<>();
         profiles.add(new Profile("shen", "Shen", "bio")); // temp, later loaded from file
 
-        loginView loginView = new loginView();
-        new loginController(primaryStage, loginView, profiles);
-
-        primaryStage.setTitle("Media Vault");
-        primaryStage.setScene(loginView.getScene());
+//        loginView loginView = new loginView();
+//        new loginController(primaryStage, loginView, profiles);
+//
+//        primaryStage.setTitle("Media Vault");
+//        primaryStage.setScene(loginView.getScene());
+//        primaryStage.show();
+        
+        SceneController sceneController = new SceneController(primaryStage, profiles);
+        sceneController.showLogin();
         primaryStage.show();
 
-        /*testing ko lang mainview2...
-        Parent root = FXMLLoader.load(getClass().getResource("/view/mainView2.fxml"));
-        Scene scene = new Scene(root);
-        primaryStage.setScene(scene);
-        primaryStage.show();
-         */
 
     }
 

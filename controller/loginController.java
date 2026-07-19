@@ -14,11 +14,11 @@ import java.util.List;
 
 public class loginController {
     private loginView loginView;
-    private Stage stage;
+    private SceneController sceneController;
     private List<Profile> profiles; // wherever your saved profiles come from
 
-    public loginController(Stage stage, loginView loginView, List<Profile> profiles) {
-        this.stage = stage;
+    public loginController(SceneController sceneController, loginView loginView, List<Profile> profiles) {
+        this.sceneController = SceneController;
         this.loginView = loginView;
         this.profiles = profiles;
 
@@ -44,22 +44,10 @@ public class loginController {
         }
 
         // success — switch scene to main app
+        sceneController.showMainView();
 //        mainView mainView = new mainView(match.getLibrary());
 //        stage.setScene(mainView.getScene());
 
-
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView2.fxml"));
-            Parent root = loader.load();
-
-            mainView2Controller controller = loader.getController();
-            controller.init(match, stage);
-
-            stage.setScene(new Scene(root));
-        } catch (IOException e) {
-            e.printStackTrace();
-            loginView.getErrorLabel().setText("Failed to load main view.");
-        }
 
 
     }
