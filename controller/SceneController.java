@@ -40,6 +40,22 @@ public class SceneController {
         }
     }
 
+    public void showCreateProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/createProfileView.fxml"));
+            Parent root = loader.load();
+
+            createProfileController controller = loader.getController();
+            controller.init(this, profiles);
+
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showLogin();
+        }
+    }
     // 2. Shows the main app screen after logging in (mainView.fxml)
     public void showMainView(Profile profile) {
         try {

@@ -1,16 +1,35 @@
 // controller/loginController.java
 package controller;
 
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import model.Profile;
 import view.loginView;
 
 import java.util.List;
 
 public class loginController {
+    @FXML private Button createProfileButton;
+    @FXML private Button exitProgramButton;
+
     private loginView loginView;
     private SceneController sceneController;
     private List<Profile> profiles; // wherever your saved profiles come from
 
+    public void init(SceneController sceneController, List<Profile> profiles) {
+        this.sceneController = sceneController;
+        this.profiles = profiles;
+    }
+    
+    public void handleCreateProfile() {
+        sceneController.showCreateProfile();
+    }
+
+    public void handleExitProgram() {
+        System.exit(0);
+    }
+
+    /*
     public void init(SceneController sceneController, List<Profile> profiles) {
         this.sceneController = sceneController;
         this.profiles = profiles;
@@ -51,5 +70,5 @@ public class loginController {
 
 
     }
-
+    */
 }
