@@ -11,6 +11,11 @@ public class loginController {
     private SceneController sceneController;
     private List<Profile> profiles; // wherever your saved profiles come from
 
+    public void init(SceneController sceneController, List<Profile> profiles) {
+        this.sceneController = sceneController;
+        this.profiles = profiles;
+    }
+
     public loginController(SceneController sceneController, loginView loginView, List<Profile> profiles) {
         this.sceneController = sceneController;
         this.loginView = loginView;

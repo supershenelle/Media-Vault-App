@@ -1,30 +1,32 @@
 @font-face {
+    font-family: "High Cruiser";
     src: url('highcruiser.otf');
 }
 
-.root {
-    -fx-background-color: #343131;
-    -fx-font-family: "High Cruiser PERSONAL USE ONLY";
+@font-face {
+    font-family: "Pixel 1";
+    src: url('pixel1.TTF');
 }
 
-.button {
-    -fx-font-size: 25px;
-    -fx-background-color: #EEDF7A;
-    -fx-text-fill: #343131;
-    -fx-padding: 8 18;
-}
-.button:hover {
-    -fx-background-color: #D8A25E;
-}
-.button:pressed {
-    -fx-background-color: #D8A25E;
+@font-face {
+    font-family: "Pixel 2";
+    src: url('pixel2.TTF');
 }
 
-.titleContainer {
-    -fx-background-color: #fffbde;
-    -fx-border-color: #D8A25E;
-    -fx-border-width: 10px;
-    -fx-alignment: center;
-    -fx-spacing: -35px;
-    -fx-padding: 10px 10px;
+@font-face {
+    font-family: "Pixel 3";
+    src: url('pixel3.TTF');
+}
+
+@font-face {
+    font-family: "Pixel 4";
+    src: url('pixel4.ttf');
+}
+
+@font-face {
+    src: url('pixelmix.ttf');
+}
+
+@font-face {
+    src: url('pixelmix_bold.ttf');
 }

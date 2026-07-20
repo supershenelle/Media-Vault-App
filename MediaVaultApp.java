@@ -23,8 +23,10 @@ public class MediaVaultApp extends Application {
         primaryStage.setMinHeight(500);
 
         primaryStage.setTitle("Media Vault");
-        primaryStage.setWidth(1000);
-        primaryStage.setHeight(700);
+        primaryStage.setWidth(800);
+        primaryStage.setHeight(600);
+        primaryStage.setMaxWidth(800);
+        primaryStage.setMaxHeight(600);
         
         SceneController sceneController = new SceneController(primaryStage, profiles);
         sceneController.showLogin();
