@@ -58,11 +58,35 @@ public class mainViewController {
             if (!typeController.isConfirmed()) return; // user closed without picking
 
             switch (typeController.getSelectedType()) {
-//                case "model.Movie" -> addMovie();
+                case "model.Movie" -> addMovie();
 //                case "model.Videogame" -> addVideogame();
 //                case "Music Artist" -> addMusicArtist();
             }
 
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void addMovie() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addMovieView.fxml"));
+            Parent root = loader.load();
+            addMovieController movieController = loader.getController();
+
+            Stage movieStage = new Stage();
+            movieStage.setTitle("Add Film");
+            movieStage.setScene(new Scene(root));
+            movieStage.showAndWait();
+
+            if (!movieController.isConfirmed()) return;
+
+            profile.getLibrary().addEntry(movieController.getResult());
+
+            // refresh the list view so the new entry shows up
+            library.getItems().clear();
+            library.getItems().addAll(profile.getLibrary().getEntries());
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -96,4 +120,6 @@ public class mainViewController {
     public void handleLogout() {
 
     }
+
+    
 }
