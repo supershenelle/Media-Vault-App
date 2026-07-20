@@ -20,10 +20,28 @@ public class SceneController {
         this.stage = stage;
         this.profiles = profiles;
     }
+
     public void showLogin() {
         loginView loginView = new loginView();
-        new loginController(this, loginView, profiles);
         stage.setScene(loginView.getScene());
+        new loginController(this, loginView, profiles);
+    }
+
+    public void showCreateProfile() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/createProfileView.fxml"));
+            Parent root = loader.load();
+
+            createProfileController controller = loader.getController();
+            controller.init(this, profiles);
+
+            scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+            showLogin();
+        }
     }
 
     public void showMainView(Profile profile) {
