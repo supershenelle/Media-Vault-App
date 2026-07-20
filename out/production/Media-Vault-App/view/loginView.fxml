@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.6297710214862386">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.2368421107530594" green="0.2214912325143814" blue="0.2214912325143814" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4697986577181207">
+                     <color>
+                        <Color red="0.12529781460762024" green="0.10558804124593735" blue="0.34210526943206787" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7539149888143177">
+                     <color>
+                        <Color red="0.32081398367881775" green="0.27900001406669617" blue="0.6200000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.1407299041748047" green="0.14948920905590057" blue="0.4035087823867798" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@/overlay.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" StackPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="290.0" fitWidth="477.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/Media.png" />
+               </image>
+            </ImageView>
+            <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="91.0" prefWidth="800.0" spacing="30.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="184.0" text="Create Profile" textAlignment="CENTER">
+                     <font>
+                        <Font name="pixelmix Regular" size="16.0" />
+                     </font>
+                  </Button>
+                  <Button alignment="CENTER" contentDisplay="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" mnemonicParsing="false" prefHeight="38.0" prefWidth="184.0" text="Exit Program" textAlignment="CENTER">
+                     <font>
+                        <Font name="pixelmix Regular" size="16.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</StackPane>
