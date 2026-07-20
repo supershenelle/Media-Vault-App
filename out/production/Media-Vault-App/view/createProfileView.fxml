@@ -84,5 +84,10 @@
             <Font name="pixelmix Regular" size="20.0" />
          </font>
       </Label>
+      <Label fx:id="errorLabel" alignment="CENTER" layoutX="227.0" layoutY="201.0" prefHeight="17.0" prefWidth="355.0" textFill="RED">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

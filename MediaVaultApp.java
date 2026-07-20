@@ -19,8 +19,8 @@ public class MediaVaultApp extends Application {
         profiles.add(new Profile("shen", "Shen", "bio")); // temp, later loaded from file
 
         primaryStage.centerOnScreen(); // para magdisplay lang sa center ng screen m
-        primaryStage.setMinWidth(700); // para di masyado maliit
-        primaryStage.setMinHeight(500);
+        primaryStage.setMinWidth(800); // para di masyado maliit
+        primaryStage.setMinHeight(600);
 
         primaryStage.setTitle("Media Vault");
         primaryStage.setWidth(800);

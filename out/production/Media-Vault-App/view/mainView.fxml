@@ -2,7 +2,6 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -11,12 +10,12 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
 <?import javafx.scene.paint.RadialGradient?>
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mainViewController">
    <children>
@@ -53,36 +52,53 @@
             </RadialGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="546.0" stroke="WHITE" strokeType="INSIDE" width="736.0" />
-      <ImageView fitHeight="599.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../resources/clouds.png" />
+            <Image url="@../resources/bgmain.png" />
          </image>
       </ImageView>
       <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
          <children>
-            <Label alignment="CENTER" layoutX="45.0" layoutY="39.0" prefHeight="36.0" prefWidth="328.0" text="YOUR PROFILE" textFill="WHITE">
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="491.0" layoutX="29.0" layoutY="43.0" stroke="WHITE" strokeType="INSIDE" width="736.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" height="49.0" layoutX="86.0" layoutY="19.0" stroke="WHITE" strokeType="INSIDE" width="266.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="0.2981734275817871" green="0.13861815631389618" blue="0.7017543911933899" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="0.2151559442281723" green="0.06822612136602402" blue="0.3947368562221527" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Label alignment="CENTER" layoutX="41.0" layoutY="24.0" prefHeight="40.0" prefWidth="360.0" text="YOUR PROFILE" textFill="WHITE">
                <font>
-                  <Font name="pixelmix Regular" size="33.0" />
+                  <Font name="04b25" size="39.0" />
                </font>
             </Label>
-            <Label fx:id="usernameLabel" layoutX="77.0" layoutY="86.0" prefHeight="25.0" prefWidth="309.0" text="Username: " textFill="#ffd642">
+            <Label fx:id="usernameLabel" layoutX="71.0" layoutY="80.0" prefHeight="25.0" prefWidth="309.0" text="Username: " textFill="#ffd642">
                <font>
                   <Font name="pixelmix Regular" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="displayNameLabel" layoutX="397.0" layoutY="86.0" prefHeight="25.0" prefWidth="317.0" text="Display Name:" textFill="#ffd642">
+            <Label fx:id="displayNameLabel" layoutX="391.0" layoutY="80.0" prefHeight="25.0" prefWidth="317.0" text="Display Name:" textFill="#ffd642">
                <font>
                   <Font name="pixelmix Regular" size="16.0" />
                </font>
             </Label>
-            <Label fx:id="bioLabel" layoutX="76.0" layoutY="112.0" prefHeight="25.0" prefWidth="653.0" text="Bio: " textFill="#ffd642">
+            <Label fx:id="bioLabel" layoutX="70.0" layoutY="106.0" prefHeight="25.0" prefWidth="653.0" text="Bio: " textFill="#ffd642">
                <font>
                   <Font name="pixelmix Regular" size="16.0" />
                </font>
             </Label>
-            <ListView fx:id="library" editable="true" layoutX="69.0" layoutY="152.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="327.0" prefWidth="661.0" snapToPixel="false" />
-            <GridPane layoutX="96.0" layoutY="505.0" prefHeight="13.0" prefWidth="602.0">
+            <GridPane layoutX="99.0" layoutY="461.0" prefHeight="13.0" prefWidth="602.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -115,7 +131,7 @@
                   </Button>
                </children>
             </GridPane>
-            <GridPane layoutX="56.0" layoutY="534.0" prefHeight="13.0" prefWidth="681.0">
+            <GridPane layoutX="59.0" layoutY="494.0" prefHeight="13.0" prefWidth="681.0">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -142,12 +158,86 @@
                   </Button>
                </children>
             </GridPane>
-            <Button fx:id="logOutButton" layoutX="659.0" layoutY="45.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" text="Log Out">
+            <Button fx:id="logOutButton" layoutX="659.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" text="Log Out">
                <font>
                   <Font name="pixelmix Regular" size="12.0" />
                </font>
             </Button>
-            <Line endX="351.66668701171875" endY="-671.3333129882812" layoutX="295.0" layoutY="730.0" startX="93.66665649414062" startY="-671.3333129882812" stroke="WHITE" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="515.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="292.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="69.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+            <Label alignment="CENTER" layoutX="110.0" layoutY="139.0" prefHeight="37.0" prefWidth="551.0" text="RECENTLY ADDED MEDIA" textFill="WHITE">
+               <font>
+                  <Font name="pixelmix Regular" size="19.0" />
+               </font>
+            </Label>
+            <Line endX="144.6666717529297" endY="-1.52587890625E-5" layoutX="86.0" layoutY="157.0" startX="-53.999996185302734" startY="-1.52587890625E-5" stroke="#ffffff50" />
+            <Line endX="170.66668701171875" endY="-1.52587890625E-5" layoutX="596.0" layoutY="157.0" startX="-53.999996185302734" startY="-1.52587890625E-5" stroke="#ffffff50" />
+            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../resources/mainview.png" />
+               </image>
+            </ImageView>
+            <Label alignment="CENTER" layoutX="105.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="MOVIES / FILMS" textFill="#0d0d0d">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="329.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="VIDEO GAMES" textFill="#0d0d0d">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="552.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="DISCOGRAPHY" textFill="#0d0d0d">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="movie1" alignment="CENTER" layoutX="95.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="movie2" alignment="CENTER" layoutX="95.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="movie3" alignment="CENTER" layoutX="95.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="game1" alignment="CENTER" layoutX="321.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="game2" alignment="CENTER" layoutX="321.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="game3" alignment="CENTER" layoutX="323.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="disco1" alignment="CENTER" layoutX="546.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="disco2" alignment="CENTER" layoutX="546.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
+            <Label fx:id="disco3" alignment="CENTER" layoutX="546.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
+               <font>
+                  <Font name="pixelmix Regular" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>

@@ -13,6 +13,7 @@ import model.Media;
 import model.Profile;
 
 import java.io.IOException;
+import java.util.List;
 
 public class mainViewController {
     @FXML private Label usernameLabel;
@@ -29,6 +30,11 @@ public class mainViewController {
     @FXML private Button summaryButton;
     @FXML private Button logOutButton;
 
+    // para sa recent activity
+    @FXML private Label movie1, movie2, movie3;
+    @FXML private Label game1, game2, game3;
+    @FXML private Label disco1, disco2, disco3;
+
     private Profile profile;
     private Stage stage;
 
@@ -40,8 +46,6 @@ public class mainViewController {
         usernameLabel.setText("Username: @" + profile.getUsername());
         displayNameLabel.setText("Display Name: " + profile.getDisplayName());
         bioLabel.setText("Bio: " + profile.getBio());
-        library.getItems().clear();
-        library.getItems().addAll(lib.getEntries());
     }
 
     public void handleAdd() {

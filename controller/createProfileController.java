@@ -34,11 +34,11 @@ public class createProfileController {
             return;
         }
         else if(displayName.isEmpty()){
-            errorLabel.setText("displayName cannot be empty.");
+            errorLabel.setText("Display name cannot be empty.");
             return;
         }
         else if(bio.isEmpty()){
-            errorLabel.setText("bio cannot be empty.");
+            errorLabel.setText("Bio cannot be empty.");
             return;
         }
 

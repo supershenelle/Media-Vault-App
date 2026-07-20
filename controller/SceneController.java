@@ -32,9 +32,10 @@ public class SceneController {
             }
 
             scene = new Scene(root);
-            stage.sizeToScene();
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
+            stage.sizeToScene();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -50,9 +51,10 @@ public class SceneController {
             controller.init(this, profiles);
 
             scene = new Scene(root);
-            stage.sizeToScene();
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
+            stage.sizeToScene();
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -71,9 +73,10 @@ public class SceneController {
             }
 
             scene = new Scene(root);
-            stage.sizeToScene();
             stage.setScene(scene);
+            stage.setResizable(false);
             stage.show();
+            stage.sizeToScene();
 
         } catch (IOException e) {
             e.printStackTrace();
