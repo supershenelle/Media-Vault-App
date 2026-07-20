@@ -8,11 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.stage.Stage;
-import model.Library;
-import model.Media;
-import model.Profile;
+import model.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class mainViewController {
@@ -46,7 +45,51 @@ public class mainViewController {
         usernameLabel.setText("Username: @" + profile.getUsername());
         displayNameLabel.setText("Display Name: " + profile.getDisplayName());
         bioLabel.setText("Bio: " + profile.getBio());
+
+        updateRecent();
     }
+
+    public void updateRecent() {
+        Label[] movieBox = {movie1, movie2, movie3};
+        Label[] gameBox = {game1, game2, game3};
+        Label[] discoBox = {disco1, disco2, disco3};
+
+        List<Media> movies = new ArrayList<>();
+        List<Media> games = new ArrayList<>();
+        List<Media> disco = new ArrayList<>();
+
+        for (Media item : profile.getLibrary().getEntries())
+        {
+            if (item instanceof Movie)
+                movies.add(item);
+
+            else if (item instanceof Videogame)
+                games.add(item);
+
+            else if (item instanceof MusicArtist)
+                disco.add(item);
+        }
+
+        fillBoxes(movies, movieBox);
+        fillBoxes(games, gameBox);
+        fillBoxes(disco, discoBox);
+    }
+
+    private void fillBoxes(List<Media> items, Label[] labels) {
+        int size = items.size();
+        for (int i = 0; i < labels.length; i++)
+        {
+            if (i < size)
+            {
+                Media recent = items.get(size - 1 - i);
+                labels[i].setText(recent.getTitle());
+            }
+
+            else
+                labels[i].setText("---");
+        }
+    }
+
 
     public void handleAdd() {
         try {
@@ -87,12 +130,12 @@ public class mainViewController {
             if (!movieController.isConfirmed()) return;
 
             profile.getLibrary().addEntry(movieController.getResult());
+            updateRecent();
 
-            // refresh the list view so the new entry shows up
-            library.getItems().clear();
-            library.getItems().addAll(profile.getLibrary().getEntries());
+        }
 
-        } catch (IOException e) {
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }

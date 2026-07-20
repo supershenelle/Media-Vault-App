@@ -1,12 +1,7 @@
 // MediaVaultApp.java
 import controller.SceneController;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
-import controller.loginController;
-import view.loginView;
 import model.Profile;
 
 import java.util.ArrayList;

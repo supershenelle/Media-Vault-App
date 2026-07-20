@@ -98,7 +98,91 @@
                   <Font name="pixelmix Regular" size="16.0" />
                </font>
             </Label>
-            <GridPane layoutX="99.0" layoutY="461.0" prefHeight="13.0" prefWidth="602.0">
+            <AnchorPane>
+               <children>
+                  <Button fx:id="logOutButton" layoutX="659.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" styleClass="pixel-button" text="Log Out">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="515.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="292.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+                  <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="69.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
+                  <Label alignment="CENTER" layoutX="110.0" layoutY="139.0" prefHeight="37.0" prefWidth="551.0" text="RECENTLY ADDED MEDIA" textFill="WHITE">
+                     <font>
+                        <Font name="pixelmix Regular" size="19.0" />
+                     </font>
+                  </Label>
+                  <Line endX="202.83331298828125" endY="-3.0517578125E-5" layoutX="31.500003814697266" layoutY="156.49998474121094" startX="-2.040447235107422" startY="-3.0517578125E-5" stroke="#ffffff50" />
+                  <Line endX="224.1666259765625" endY="-3.0517578125E-5" layoutX="541.5" layoutY="156.49998474121094" startX="-2.5" startY="-3.0517578125E-5" stroke="#ffffff50" />
+                  <ImageView fitHeight="600.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/mainview.png" />
+                     </image>
+                  </ImageView>
+                  <Label alignment="CENTER" layoutX="105.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="MOVIES / FILMS" textFill="#0d0d0d">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="329.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="VIDEO GAMES" textFill="#0d0d0d">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="552.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="DISCOGRAPHY" textFill="#0d0d0d">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="movie1" alignment="CENTER" layoutX="95.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="movie2" alignment="CENTER" layoutX="95.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="movie3" alignment="CENTER" layoutX="95.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="game1" alignment="CENTER" layoutX="321.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="game2" alignment="CENTER" layoutX="321.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="game3" alignment="CENTER" layoutX="323.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="disco1" alignment="CENTER" layoutX="546.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="disco2" alignment="CENTER" layoutX="546.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="disco3" alignment="CENTER" layoutX="546.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <GridPane layoutX="99.0" layoutY="461.0" prefHeight="13.0" prefWidth="602.0" styleClass="pixel-button">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -109,22 +193,22 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="129.0" text="Add Media">
+                  <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="129.0" styleClass="pixel-button" text="Add Media">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleRemove" prefHeight="25.0" prefWidth="129.0" text="Remove Media" GridPane.columnIndex="1">
+                  <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleRemove" prefHeight="25.0" prefWidth="129.0" styleClass="pixel-button" text="Remove Media" GridPane.columnIndex="1">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="rateButton" mnemonicParsing="false" onAction="#handleRate" prefHeight="25.0" prefWidth="145.0" text="Rate and Review" GridPane.columnIndex="3">
+                  <Button fx:id="rateButton" mnemonicParsing="false" onAction="#handleRate" prefHeight="25.0" prefWidth="145.0" styleClass="pixel-button" text="Rate and Review" GridPane.columnIndex="3">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="updateStatusButton" mnemonicParsing="false" onAction="#handleUpdateStatus" prefHeight="25.0" prefWidth="181.0" text="Update Media Status" GridPane.columnIndex="2">
+                  <Button fx:id="updateStatusButton" mnemonicParsing="false" onAction="#handleUpdateStatus" prefHeight="25.0" prefWidth="181.0" styleClass="pixel-button" text="Update Media Status" GridPane.columnIndex="2">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
@@ -141,103 +225,23 @@
                   <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Button fx:id="filterButton" mnemonicParsing="false" onAction="#handleFilter" prefHeight="25.0" prefWidth="198.0" text="Display/Filter Entries" GridPane.columnIndex="1">
+                  <Button fx:id="filterButton" mnemonicParsing="false" onAction="#handleFilter" prefHeight="25.0" prefWidth="198.0" styleClass="pixel-button" text="Display/Filter Entries" GridPane.columnIndex="1">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="updateDiscographyButton" mnemonicParsing="false" onAction="#handleUpdateDiscography" prefHeight="25.0" prefWidth="283.0" text="Update Artist discography Logs ">
+                  <Button fx:id="updateDiscographyButton" mnemonicParsing="false" onAction="#handleUpdateDiscography" prefHeight="25.0" prefWidth="283.0" styleClass="pixel-button" text="Update Artist discography Logs ">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
-                  <Button fx:id="summaryButton" mnemonicParsing="false" onAction="#handleSummary" prefHeight="25.0" prefWidth="187.0" text="View Library Summary" GridPane.columnIndex="2">
+                  <Button fx:id="summaryButton" mnemonicParsing="false" onAction="#handleSummary" prefHeight="25.0" prefWidth="187.0" styleClass="pixel-button" text="View Library Summary" GridPane.columnIndex="2">
                      <font>
                         <Font name="pixelmix Regular" size="12.0" />
                      </font>
                   </Button>
                </children>
             </GridPane>
-            <Button fx:id="logOutButton" layoutX="659.0" layoutY="31.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" text="Log Out">
-               <font>
-                  <Font name="pixelmix Regular" size="12.0" />
-               </font>
-            </Button>
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="515.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="292.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
-            <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="69.0" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
-            <Label alignment="CENTER" layoutX="110.0" layoutY="139.0" prefHeight="37.0" prefWidth="551.0" text="RECENTLY ADDED MEDIA" textFill="WHITE">
-               <font>
-                  <Font name="pixelmix Regular" size="19.0" />
-               </font>
-            </Label>
-            <Line endX="144.6666717529297" endY="-1.52587890625E-5" layoutX="86.0" layoutY="157.0" startX="-53.999996185302734" startY="-1.52587890625E-5" stroke="#ffffff50" />
-            <Line endX="170.66668701171875" endY="-1.52587890625E-5" layoutX="596.0" layoutY="157.0" startX="-53.999996185302734" startY="-1.52587890625E-5" stroke="#ffffff50" />
-            <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../resources/mainview.png" />
-               </image>
-            </ImageView>
-            <Label alignment="CENTER" layoutX="105.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="MOVIES / FILMS" textFill="#0d0d0d">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="329.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="VIDEO GAMES" textFill="#0d0d0d">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label alignment="CENTER" layoutX="552.0" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="DISCOGRAPHY" textFill="#0d0d0d">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="movie1" alignment="CENTER" layoutX="95.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="movie2" alignment="CENTER" layoutX="95.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="movie3" alignment="CENTER" layoutX="95.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="game1" alignment="CENTER" layoutX="321.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="game2" alignment="CENTER" layoutX="321.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="game3" alignment="CENTER" layoutX="323.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="disco1" alignment="CENTER" layoutX="546.0" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="disco2" alignment="CENTER" layoutX="546.0" layoutY="305.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
-            <Label fx:id="disco3" alignment="CENTER" layoutX="546.0" layoutY="374.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#0d0d0d" wrapText="true">
-               <font>
-                  <Font name="pixelmix Regular" size="15.0" />
-               </font>
-            </Label>
          </children>
       </AnchorPane>
    </children>

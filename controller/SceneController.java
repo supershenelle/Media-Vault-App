@@ -61,6 +61,7 @@ public class SceneController {
             showLogin();
         }
     }
+
     // 2. Shows the main app screen after logging in (mainView.fxml)
     public void showMainView(Profile profile) {
         try {
