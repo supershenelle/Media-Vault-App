@@ -1,15 +1,9 @@
 // controller/loginController.java
 package controller;
 
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
 import model.Profile;
 import view.loginView;
-import view.mainView;
 
-import java.io.IOException;
 import java.util.List;
 
 public class loginController {

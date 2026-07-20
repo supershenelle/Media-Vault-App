@@ -14,7 +14,7 @@ import model.Profile;
 
 import java.io.IOException;
 
-public class mainView2Controller {
+public class mainViewController {
     @FXML private Label usernameLabel;
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;

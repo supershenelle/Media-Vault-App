@@ -1,7 +1,6 @@
 package controller;
 
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
@@ -29,10 +28,10 @@ public class SceneController {
 
     public void showMainView(Profile profile) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView2.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView.fxml"));
             Parent root = loader.load();
 
-            mainView2Controller controller = loader.getController();
+            mainViewController controller = loader.getController();
             controller.init(profile, stage);
             scene = new Scene(root);
             stage.setScene(scene);
