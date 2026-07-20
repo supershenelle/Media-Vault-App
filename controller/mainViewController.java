@@ -106,7 +106,7 @@ public class mainViewController {
 
             switch (typeController.getSelectedType()) {
                 case "model.Movie" -> addMovie();
-//                case "model.Videogame" -> addVideogame();
+                case "model.Videogame" -> addVideogame();
 //                case "Music Artist" -> addMusicArtist();
             }
 
@@ -116,7 +116,7 @@ public class mainViewController {
         }
     }
 
-    private void addMovie() {
+    public void addMovie() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addMovieView.fxml"));
             Parent root = loader.load();
@@ -130,6 +130,30 @@ public class mainViewController {
             if (!movieController.isConfirmed()) return;
 
             profile.getLibrary().addEntry(movieController.getResult());
+            updateRecent();
+
+        }
+
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void addVideogame() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addVideogameView.fxml"));
+            Parent root = loader.load();
+            addVideogameController videogameController = loader.getController();
+
+            Stage movieStage = new Stage();
+            movieStage.setTitle("Add Film");
+            movieStage.setScene(new Scene(root));
+            movieStage.showAndWait();
+
+            if (!videogameController.isConfirmed()) return;
+
+            profile.getLibrary().addEntry(videogameController.getResult());
             updateRecent();
 
         }
