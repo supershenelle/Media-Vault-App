@@ -32,7 +32,7 @@
 }
 
 .button {
-    -fx-background-color: rgb(241 235 235 / 0.85);
+    -fx-background-color: #f1ebebd9; /* ~85% opacity */
     -fx-text-fill: #000000;
     -fx-font-family: "pixelmix Regular";
     -fx-font-size: 16px;
@@ -40,15 +40,14 @@
     -fx-cursor: hand;
 }
 
-
 .button:hover {
-    -fx-background-color: rgb(230 223 218 / 0.74);
+    -fx-background-color: #e6dfdab2; /* ~74% opacity */
     -fx-scale-x: 1.05;
     -fx-scale-y: 1.05;
 }
 
 .button:pressed {
-    -fx-background-color: rgb(110 153 232);
+    -fx-background-color: #6e99e8ff; /* 100% opacity */
     -fx-scale-x: 0.98;
     -fx-scale-y: 0.98;
 }

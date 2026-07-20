@@ -32,6 +32,7 @@ public class SceneController {
             }
 
             scene = new Scene(root);
+            stage.sizeToScene();
             stage.setScene(scene);
             stage.show();
 
@@ -49,8 +50,10 @@ public class SceneController {
             controller.init(this, profiles);
 
             scene = new Scene(root);
+            stage.sizeToScene();
             stage.setScene(scene);
             stage.show();
+
         } catch (IOException e) {
             e.printStackTrace();
             showLogin();
@@ -68,6 +71,7 @@ public class SceneController {
             }
 
             scene = new Scene(root);
+            stage.sizeToScene();
             stage.setScene(scene);
             stage.show();
 
