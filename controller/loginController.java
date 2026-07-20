@@ -22,6 +22,7 @@ public class loginController {
         this.profiles = profiles;
 
         loginView.getLoginButton().setOnAction(e -> handleLogin());
+        loginView.getCreateProfileButton().setOnAction(e -> sceneController.showCreateProfile());
     }
 
     private void handleLogin() {

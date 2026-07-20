@@ -20,6 +20,8 @@ public class loginView {
     private TextField usernameField = new TextField();
     private Button loginButton = new Button("Log In");
     private Label errorLabel = new Label();
+    private Button createProfileButton;
+    private Button exitProgramButton;
 
     public Scene getScene() {
         /*
@@ -50,12 +52,12 @@ public class loginView {
         root.setPadding(new Insets(40));
          */
 
-        Button createProfile = new Button("create profile");
-        createProfile.setPrefSize(200, 70);
-        Button exitProgram = new Button("exit program");
-        exitProgram.setPrefSize(200, 70);
+        createProfileButton = new Button("create profile");
+        createProfileButton.setPrefSize(200, 70);
+        exitProgramButton = new Button("exit program");
+        exitProgramButton.setPrefSize(200, 70);
 
-        HBox buttons = new HBox(15, createProfile, exitProgram);
+        HBox buttons = new HBox(15, createProfileButton, exitProgramButton);
         buttons.setAlignment(Pos.CENTER);
 
         VBox root = new VBox(35, titleContainer, buttons);
@@ -68,4 +70,6 @@ public class loginView {
     public TextField getUsernameField() { return usernameField; }
     public Button getLoginButton() { return loginButton; }
     public Label getErrorLabel() { return errorLabel; }
+    public Button getCreateProfileButton() { return createProfileButton; }
+    public Button getExitProgramButton() { return exitProgramButton; }
 }
