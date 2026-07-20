@@ -1,6 +1,9 @@
 package controller;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -8,6 +11,8 @@ import javafx.stage.Stage;
 import model.Library;
 import model.Media;
 import model.Profile;
+
+import java.io.IOException;
 
 public class mainView2Controller {
     @FXML private Label usernameLabel;
@@ -40,7 +45,28 @@ public class mainView2Controller {
     }
 
     public void handleAdd() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mediaTypeView.fxml"));
+            Parent root = loader.load();
+            mediaTypeController typeController = loader.getController();
 
+            Stage typeStage = new Stage();
+            typeStage.setTitle("Add Media");
+            typeStage.setScene(new Scene(root));
+            typeStage.showAndWait(); // pauses here until typeStage.close() runs
+
+            if (!typeController.isConfirmed()) return; // user closed without picking
+
+            switch (typeController.getSelectedType()) {
+//                case "model.Movie" -> addMovie();
+//                case "model.Videogame" -> addVideogame();
+//                case "Music Artist" -> addMusicArtist();
+            }
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleRemove() {
