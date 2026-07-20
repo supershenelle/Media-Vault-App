@@ -1,0 +1,32 @@
+@font-face {
+    src: url('highcruiser.otf');
+}
+
+.root {
+    -fx-background-color: #343131;
+    -fx-font-family: "High Cruiser PERSONAL USE ONLY";
+}
+
+.button {
+    -fx-background-color: #EEDF7A;
+    -fx-text-fill: #A04747;
+    -fx-background-radius: 8;
+    -fx-padding: 8 18;
+}
+.button:hover {
+    -fx-background-color: #D8A25E;
+}
+.button:pressed {
+    -fx-background-color: #D8A25E;
+}
+
+.titleContainer {
+    -fx-background-color: #fffbde;
+    -fx-background-radius: 15px;
+    -fx-border-color: #D8A25E;
+    -fx-border-radius: 10px;
+    -fx-border-width: 10px;
+    -fx-alignment: center;
+    -fx-spacing: -35px;
+    -fx-padding: 10px 20px;
+}

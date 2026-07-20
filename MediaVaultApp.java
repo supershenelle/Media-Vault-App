@@ -18,12 +18,13 @@ public class MediaVaultApp extends Application {
         List<Profile> profiles = new ArrayList<>();
         profiles.add(new Profile("shen", "Shen", "bio")); // temp, later loaded from file
 
-//        loginView loginView = new loginView();
-//        new loginController(primaryStage, loginView, profiles);
-//
-//        primaryStage.setTitle("Media Vault");
-//        primaryStage.setScene(loginView.getScene());
-//        primaryStage.show();
+        primaryStage.centerOnScreen(); // para magdisplay lang sa center ng screen m
+        primaryStage.setMinWidth(700); // para di masyado maliit
+        primaryStage.setMinHeight(500);
+
+        primaryStage.setTitle("Media Vault");
+        primaryStage.setWidth(1000);
+        primaryStage.setHeight(700);
         
         SceneController sceneController = new SceneController(primaryStage, profiles);
         sceneController.showLogin();
