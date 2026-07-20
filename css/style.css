@@ -8,9 +8,9 @@
 }
 
 .button {
+    -fx-font-size: 25px;
     -fx-background-color: #EEDF7A;
-    -fx-text-fill: #A04747;
-    -fx-background-radius: 8;
+    -fx-text-fill: #343131;
     -fx-padding: 8 18;
 }
 .button:hover {
@@ -22,11 +22,9 @@
 
 .titleContainer {
     -fx-background-color: #fffbde;
-    -fx-background-radius: 15px;
     -fx-border-color: #D8A25E;
-    -fx-border-radius: 10px;
     -fx-border-width: 10px;
     -fx-alignment: center;
     -fx-spacing: -35px;
-    -fx-padding: 10px 20px;
+    -fx-padding: 10px 10px;
 }

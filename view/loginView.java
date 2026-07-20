@@ -7,6 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
 
@@ -19,16 +22,24 @@ public class loginView {
     private Label errorLabel = new Label();
 
     public Scene getScene() {
+        /*
         Text title1 = new Text("Media");
         title1.setStyle("-fx-font-size: 80px; -fx-fill: #A04747;");
         Text title2 = new Text("Vault");
         title2.setStyle("-fx-font-size: 80px; -fx-fill: #A04747;");
 
-        VBox titleContainer = new VBox(title1, title2);
+         */
+
+        ImageView titleImage = new ImageView(new Image(getClass().getResourceAsStream("/Media.png")));
+        titleImage.setFitWidth(350); // Set desired image size
+        titleImage.setPreserveRatio(true);
+
+        VBox titleContainer = new VBox(titleImage);
         titleContainer.setAlignment(Pos.CENTER);
         titleContainer.getStyleClass().add("titleContainer");
         titleContainer.setMaxWidth(350);
 
+        /*
         usernameField.setPromptText("Enter username");
         usernameField.setMaxWidth(200);
 
@@ -37,7 +48,18 @@ public class loginView {
         VBox root = new VBox(15, titleContainer, usernameField, loginButton, errorLabel);
         root.setAlignment(Pos.CENTER);
         root.setPadding(new Insets(40));
+         */
 
+        Button createProfile = new Button("create profile");
+        createProfile.setPrefSize(200, 70);
+        Button exitProgram = new Button("exit program");
+        exitProgram.setPrefSize(200, 70);
+
+        HBox buttons = new HBox(15, createProfile, exitProgram);
+        buttons.setAlignment(Pos.CENTER);
+
+        VBox root = new VBox(35, titleContainer, buttons);
+        root.setAlignment(Pos.CENTER);
         Scene scene = new Scene(root, 800, 600);
         scene.getStylesheets().add(getClass().getResource("/css/style.css").toExternalForm());
         return scene;
