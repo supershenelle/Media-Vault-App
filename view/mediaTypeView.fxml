@@ -4,39 +4,123 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Bloom?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.RadialGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="controller.mediaTypeController" stylesheets="@../css/style.css">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.mediaTypeController">
    <children>
-      <RadioButton fx:id="movieRadioButton" layoutX="14.0" layoutY="200.0" mnemonicParsing="false" text="Movie">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="600.0" stroke="BLACK" strokeType="INSIDE" width="800.0">
+         <fill>
+            <RadialGradient centerX="0.5" centerY="0.5" radius="0.6297710214862386">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.2368421107530594" green="0.2214912325143814" blue="0.2214912325143814" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.4697986577181207">
+                     <color>
+                        <Color red="0.12529781460762024" green="0.10558804124593735" blue="0.34210526943206787" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.7539149888143177">
+                     <color>
+                        <Color red="0.32081398367881775" green="0.27900001406669617" blue="0.6200000047683716" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.1407299041748047" green="0.14948920905590057" blue="0.4035087823867798" />
+                     </color>
+                  </Stop>
+               </stops>
+            </RadialGradient>
+         </fill>
+      </Rectangle>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/bgmain.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="600.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/choosemedia.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="308.0" layoutX="140.0" layoutY="132.0" stroke="WHITE" strokeType="INSIDE" width="521.0" />
+      <RadioButton fx:id="movieRadioButton" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="243.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="483.0" text="Movie" textFill="#fff7f7">
          <font>
-            <Font size="24.0" />
+            <Font name="pixelmix Regular" size="24.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="mediaType" />
          </toggleGroup>
+         <effect>
+            <DropShadow />
+         </effect>
       </RadioButton>
-      <Label alignment="CENTER" prefHeight="17.0" prefWidth="600.0" text="Choose Media Type">
+      <Label alignment="CENTER" layoutX="209.0" layoutY="152.0" prefHeight="45.0" prefWidth="381.0" text="Choose Media Type" textFill="WHITE">
          <font>
-            <Font size="30.0" />
+            <Font name="pixelmix Regular" size="30.0" />
          </font>
+         <effect>
+            <Bloom threshold="0.12" />
+         </effect>
       </Label>
-      <RadioButton fx:id="videogameRadioButton" layoutX="202.0" layoutY="200.0" mnemonicParsing="false" text="Videogame" toggleGroup="$mediaType">
+      <RadioButton fx:id="videogameRadioButton" alignment="CENTER_RIGHT" layoutX="161.0" layoutY="307.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="483.0" text="        Videogame" textFill="WHITE" toggleGroup="$mediaType">
          <font>
-            <Font size="24.0" />
+            <Font name="pixelmix Regular" size="24.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </RadioButton>
-      <RadioButton fx:id="musicArtistRadioButton" layoutX="422.0" layoutY="200.0" mnemonicParsing="false" text="Music Artist" toggleGroup="$mediaType">
+      <RadioButton fx:id="musicArtistRadioButton" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="374.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="483.0" text="Music Artist" textFill="WHITE" toggleGroup="$mediaType">
          <font>
-            <Font size="24.0" />
+            <Font name="pixelmix Regular" size="24.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </RadioButton>
-      <Button fx:id="confirmButton" layoutX="253.0" layoutY="288.0" mnemonicParsing="false" onAction="#handleConfirm" text="confirm">
+      <Button fx:id="confirmButton" layoutX="349.0" layoutY="457.0" mnemonicParsing="false" onAction="#handleConfirm" styleClass="pixel-button" text="confirm">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
+      <ImageView fitHeight="600.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/icons.png" />
+         </image>
+      </ImageView>
+      <Line endX="544.0" endY="259.5" startX="261.95953369140625" startY="259.5" stroke="#ffffff26">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Line>
+      <Line endX="458.9999694824219" endY="259.5000305175781" layoutX="15.0" layoutY="64.0" startX="261.95953369140625" startY="259.5" stroke="#ffffff25">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Line>
+      <Line endX="422.9999694824219" endY="259.5000305175781" layoutX="7.0" layoutY="130.0" startX="261.95953369140625" startY="259.5" stroke="#ffffff26">
+         <effect>
+            <DropShadow />
+         </effect>
+      </Line>
    </children>
 </AnchorPane>

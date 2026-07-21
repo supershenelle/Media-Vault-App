@@ -4,9 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.*;
 
@@ -18,8 +16,9 @@ public class mainViewController {
     @FXML private Label usernameLabel;
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;
-    @FXML private ListView<Media> library;
+    // @FXML private ListView<Media> library;
 
+    /*
     @FXML private Button addButton;
     @FXML private Button removeButton;
     @FXML private Button filterButton;
@@ -28,6 +27,7 @@ public class mainViewController {
     @FXML private Button updateDiscographyButton;
     @FXML private Button summaryButton;
     @FXML private Button logOutButton;
+     */
 
     // para sa recent activity
     @FXML private Label movie1, movie2, movie3;
@@ -35,12 +35,10 @@ public class mainViewController {
     @FXML private Label disco1, disco2, disco3;
 
     private Profile profile;
-    private Stage stage;
 
     public void init(Profile profile, Stage stage) {
         this.profile = profile;
-        this.stage = stage;
-        Library lib = profile.getLibrary();
+        // Library lib = profile.getLibrary();
 
         usernameLabel.setText("Username: @" + profile.getUsername());
         displayNameLabel.setText("Display Name: " + profile.getDisplayName());
@@ -109,9 +107,10 @@ public class mainViewController {
                 case "model.Videogame" -> addVideogame();
 //                case "Music Artist" -> addMusicArtist();
             }
+        }
 
-
-        } catch (IOException e) {
+        catch (IOException e)
+        {
             e.printStackTrace();
         }
     }
@@ -127,11 +126,11 @@ public class mainViewController {
             movieStage.setScene(new Scene(root));
             movieStage.showAndWait();
 
-            if (!movieController.isConfirmed()) return;
+            if (!movieController.isConfirmed())
+                return;
 
             profile.getLibrary().addEntry(movieController.getResult());
             updateRecent();
-
         }
 
         catch (IOException e)
@@ -155,7 +154,6 @@ public class mainViewController {
 
             profile.getLibrary().addEntry(videogameController.getResult());
             updateRecent();
-
         }
 
         catch (IOException e)
