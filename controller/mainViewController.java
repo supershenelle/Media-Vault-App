@@ -105,7 +105,7 @@ public class mainViewController {
             switch (typeController.getSelectedType()) {
                 case "model.Movie" -> addMovie();
                 case "model.Videogame" -> addVideogame();
-//                case "Music Artist" -> addMusicArtist();
+                case "Music Artist" -> addMusicArtist();
             }
         }
 
@@ -162,6 +162,28 @@ public class mainViewController {
         }
     }
 
+    public void addMusicArtist() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addMusicArtistView.fxml"));
+            Parent root = loader.load();
+            addMusicArtistController musicArtistController = loader.getController();
+
+            Stage artistStage = new Stage();
+            artistStage.setTitle("Add Music Artist");
+            artistStage.setScene(new Scene(root));
+            artistStage.showAndWait();
+
+            if (!musicArtistController.isConfirmed()) return;
+
+            profile.getLibrary().addEntry(musicArtistController.getResult());
+            updateRecent();
+        }
+
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+    }
     public void handleRemove() {
 
     }
