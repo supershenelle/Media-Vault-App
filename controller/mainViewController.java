@@ -146,7 +146,7 @@ public class mainViewController {
             addVideogameController videogameController = loader.getController();
 
             Stage movieStage = new Stage();
-            movieStage.setTitle("Add Film");
+            movieStage.setTitle("Add Game");
             movieStage.setScene(new Scene(root));
             movieStage.showAndWait();
 

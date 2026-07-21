@@ -79,7 +79,6 @@
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </RadioButton>
-      <Label fx:id="errorLabel" layoutX="272.0" layoutY="229.0" prefHeight="17.0" prefWidth="293.0" />
       <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/addmediatype.png" />
@@ -91,5 +90,6 @@
             <Font name="04b25" size="34.0" />
          </font>
       </Label>
+      <Label fx:id="errorLabel" layoutX="331.0" layoutY="40.0" prefHeight="17.0" prefWidth="219.0" textFill="RED" />
    </children>
 </AnchorPane>

@@ -6,45 +6,101 @@
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addVideogameController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addVideogameController">
    <children>
-      <Label alignment="CENTER" layoutX="11.0" layoutY="24.0" prefHeight="38.0" prefWidth="600.0" text="Add Videogame Entry">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.20543642342090607" green="0.1410006433725357" blue="0.3684210479259491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.20543642342090607" green="0.1410006433725357" blue="0.3684210479259491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.04184715822339058" green="0.0067684645764529705" blue="0.08771929889917374" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="159.0" layoutX="81.0" layoutY="89.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="477.0" />
+      <Label layoutX="112.0" layoutY="114.0" text="Game Title">
          <font>
-            <Font size="26.0" />
+            <Font name="pixelmix Regular" size="12.0" />
          </font>
       </Label>
-      <Label layoutX="24.0" layoutY="62.0" text="Videogame Title" />
-      <Label layoutX="27.0" layoutY="121.0" text="Developer" />
-      <Label layoutX="23.0" layoutY="180.0" text="Year  Released" />
-      <Label layoutX="409.0" layoutY="62.0" text="Description" />
-      <TextField fx:id="titleField" layoutX="20.0" layoutY="89.0" />
-      <TextField fx:id="developerField" layoutX="20.0" layoutY="146.0" />
-      <TextField fx:id="yearField" layoutX="20.0" layoutY="200.0" />
-      <TextArea fx:id="descriptionField" layoutX="339.0" layoutY="87.0" prefHeight="167.0" prefWidth="200.0" />
-      <Button fx:id="confirmButton" layoutX="282.0" layoutY="343.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" />
-      <Label layoutX="51.0" layoutY="293.0" text="Status" />
-      <RadioButton fx:id="planningRadio" layoutX="19.0" layoutY="319.0" mnemonicParsing="false" text="Planning">
+      <Label layoutX="112.0" layoutY="163.0" text="Developer">
          <font>
-            <Font size="15.0" />
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="268.0" layoutY="113.0" text="Year Released">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="270.0" layoutY="164.0" text="Description">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="titleField" layoutX="108.0" layoutY="129.0" />
+      <TextField fx:id="developerField" layoutX="108.0" layoutY="179.0" />
+      <TextField fx:id="yearField" layoutX="268.0" layoutY="129.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextArea fx:id="descriptionField" layoutX="267.0" layoutY="179.0" prefHeight="51.0" prefWidth="149.0" />
+      <Button fx:id="confirmButton" layoutX="109.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Button>
+      <RadioButton fx:id="planningRadio" layoutX="432.0" layoutY="113.0" mnemonicParsing="false" text="Planning">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
          </font>
          <toggleGroup>
             <ToggleGroup fx:id="statusGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="inProgressRadio" layoutX="17.0" layoutY="345.0" mnemonicParsing="false" text="In Progress">
-         <toggleGroup>
-            <ToggleGroup fx:id="statusGroup" />
-         </toggleGroup>
+      <RadioButton fx:id="inProgressRadio" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
          <font>
-            <Font size="15.0" />
+            <Font name="pixelmix Regular" size="12.0" />
          </font>
       </RadioButton>
-      <Label fx:id="errorLabel" layoutX="164.0" layoutY="302.0" prefHeight="17.0" prefWidth="293.0" />
-      <Label layoutX="19.0" layoutY="236.0" text="Hours Played" />
-      <TextField fx:id="hoursField" layoutX="20.0" layoutY="254.0" />
+      <Label fx:id="errorLabel" layoutX="329.0" layoutY="40.0" prefHeight="17.0" prefWidth="219.0" textFill="RED" />
+      <Line endX="550.1666870117188" endY="68.16665649414062" layoutY="-3.0" startX="332.626220703125" startY="68.16667175292969" stroke="WHITE" />
+      <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/addmediatype.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="60.0" layoutY="49.0" prefHeight="36.0" prefWidth="293.0" text="Add Game Entry">
+         <font>
+            <Font name="04b25" size="34.0" />
+         </font>
+      </Label>
+      <Label layoutX="427.0" layoutY="168.0" prefHeight="36.0" prefWidth="113.0" text="No. of     Hours Played" wrapText="true">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hoursField" layoutX="425.0" layoutY="205.0" prefHeight="25.0" prefWidth="116.0" />
    </children>
 </AnchorPane>
