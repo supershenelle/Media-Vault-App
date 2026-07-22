@@ -185,7 +185,47 @@ public class mainViewController {
         }
     }
     public void handleRemove() {
+        try {
+            // get media type na idedelete
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mediaTypeView.fxml"));
+            Parent root = loader.load();
+            mediaTypeController typeController = loader.getController();
 
+            Stage typeStage = new Stage();
+            typeStage.setTitle("Remove Media");
+            typeStage.setScene(new Scene(root));
+            typeStage.showAndWait();
+
+            if (!typeController.isConfirmed()) return; // close if di pumili
+
+            String type = typeController.getSelectedType();
+            ArrayList<Media> matches = profile.getLibrary().filterByType(type);
+
+            if (matches.isEmpty()) {
+                System.out.println("No entries found for that media type."); // lagyan to ng label
+                return;
+            }
+
+            // open yung removeMediaView
+            FXMLLoader removeLoader = new FXMLLoader(getClass().getResource("/view/removeMediaView.fxml"));
+            Parent removeRoot = removeLoader.load();
+            removeMediaController removeController = removeLoader.getController();
+            removeController.init(matches);
+
+            Stage removeStage = new Stage();
+            removeStage.setTitle("Remove Media");
+            removeStage.setScene(new Scene(removeRoot));
+            removeStage.showAndWait();
+
+            if (!removeController.isConfirmed()) return;
+
+            // Step 3: remove and refresh
+            profile.getLibrary().removeEntry(removeController.getSelectedEntry());
+            updateRecent();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleFilter() {
