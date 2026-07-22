@@ -229,7 +229,20 @@ public class mainViewController {
     }
 
     public void handleFilter() {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/displayFilterView.fxml"));
+            Parent root = loader.load();
+            displayFilterController filterController = loader.getController();
+            filterController.init(profile.getLibrary());
 
+            Stage filterStage = new Stage();
+            filterStage.setTitle("Display / Filter Entries");
+            filterStage.setScene(new Scene(root));
+            filterStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleRate() {
