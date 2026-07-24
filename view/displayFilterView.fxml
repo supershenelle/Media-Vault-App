@@ -57,8 +57,10 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="491.0" layoutX="32.0" layoutY="55.0" stroke="WHITE" strokeType="INSIDE" width="736.0" />
-      <ListView fx:id="typeListView" layoutX="436.0" layoutY="152.0" prefHeight="243.0" prefWidth="258.0" />
-      <ListView fx:id="statusListView" layoutX="115.0" layoutY="152.0" prefHeight="243.0" prefWidth="258.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="255.0" layoutX="97.0" layoutY="150.0" stroke="WHITE" strokeType="INSIDE" width="290.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="255.0" layoutX="418.0" layoutY="151.0" stroke="WHITE" strokeType="INSIDE" width="290.0" />
+      <ListView fx:id="typeListView" layoutX="434.0" layoutY="169.0" prefHeight="218.0" prefWidth="258.0" />
+      <ListView fx:id="statusListView" layoutX="114.0" layoutY="169.0" prefHeight="218.0" prefWidth="258.0" />
       <ImageView fitHeight="600.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../resources/displayfilter.png" />
@@ -82,7 +84,7 @@
             </LinearGradient>
          </fill>
       </Rectangle>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="69.0" layoutX="434.0" layoutY="409.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="258.0" />
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="69.0" layoutX="434.0" layoutY="422.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="258.0" />
       <Label layoutX="98.0" layoutY="118.0" text="TYPE">
          <font>
             <Font name="04b25" size="36.0" />
@@ -92,8 +94,8 @@
             <Font name="04b25" size="36.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="69.0" layoutX="115.0" layoutY="409.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="258.0" />
-      <RadioButton fx:id="plannedRadio" layoutX="140.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="Planned ">
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="69.0" layoutX="115.0" layoutY="422.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="258.0" />
+      <RadioButton fx:id="plannedRadio" layoutX="140.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="Planned ">
          <toggleGroup>
             <ToggleGroup fx:id="statusFilter" />
          </toggleGroup>
@@ -101,15 +103,15 @@
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="inProgressRadio" layoutX="140.0" layoutY="447.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="In Progress" toggleGroup="$statusFilter">
+      <RadioButton fx:id="inProgressRadio" layoutX="140.0" layoutY="460.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="In Progress" toggleGroup="$statusFilter">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></RadioButton>
-      <RadioButton fx:id="completedRadio" layoutX="236.0" layoutY="425.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="Completed" toggleGroup="$statusFilter">
+      <RadioButton fx:id="completedRadio" layoutX="236.0" layoutY="438.0" mnemonicParsing="false" onAction="#handleStatusFilter" text="Completed" toggleGroup="$statusFilter">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></RadioButton>
-      <RadioButton fx:id="movieRadio" layoutX="462.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Movies">
+      <RadioButton fx:id="movieRadio" layoutX="462.0" layoutY="437.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Movies">
          <toggleGroup>
             <ToggleGroup fx:id="mediaFilter" />
          </toggleGroup>
@@ -117,15 +119,15 @@
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="videogameRadio" layoutX="551.0" layoutY="424.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Videogames" toggleGroup="$mediaFilter">
+      <RadioButton fx:id="videogameRadio" layoutX="551.0" layoutY="437.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Videogames" toggleGroup="$mediaFilter">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></RadioButton>
-      <RadioButton fx:id="artistRadio" layoutX="462.0" layoutY="446.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Music Artists" toggleGroup="$mediaFilter">
+      <RadioButton fx:id="artistRadio" layoutX="462.0" layoutY="459.0" mnemonicParsing="false" onAction="#handleTypeFilter" text="Music Artists" toggleGroup="$mediaFilter">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></RadioButton>
-      <Button fx:id="closeButton" layoutX="375.0" layoutY="501.0" mnemonicParsing="false" onAction="#handleClose" text="CLOSE">
+      <Button fx:id="closeButton" layoutX="375.0" layoutY="506.0" mnemonicParsing="false" onAction="#handleClose" text="CLOSE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Button>
