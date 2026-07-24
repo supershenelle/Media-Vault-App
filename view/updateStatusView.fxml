@@ -21,6 +21,6 @@
       <RadioButton fx:id="completedRadio" layoutX="499.0" layoutY="201.0" mnemonicParsing="false" text="Completed" toggleGroup="$statusGroup" />
       <Button fx:id="confirmButton" layoutX="360.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" />
       <Button fx:id="cancelButton" layoutX="462.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
-      <Label fx:id="errorLabel" layoutX="433.0" layoutY="149.0" text="Label" />
+      <Label fx:id="errorLabel" layoutX="433.0" layoutY="149.0" />
    </children>
 </AnchorPane>

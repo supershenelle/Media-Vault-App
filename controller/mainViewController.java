@@ -246,7 +246,29 @@ public class mainViewController {
     }
 
     public void handleRate() {
+        try {
+            // filter objects that are completed
+            ArrayList<Media> completed = profile.getLibrary().filterByStatus(Status.COMPLETED);
 
+            if (completed.isEmpty()) {
+                System.out.println("No completed entries available to rate/review."); // NEED LAGYAN ERROR LABEL MAIN VIEW
+                return;
+            }
+
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/rateView.fxml"));
+            Parent root = loader.load();
+            rateController rateReviewController = loader.getController();
+            rateReviewController.init(completed);
+
+            Stage rateStage = new Stage();
+            rateStage.setTitle("Rate and Review");
+            rateStage.setScene(new Scene(root));
+            rateStage.showAndWait();
+
+            // rating/review are set directly on the Media object inside the controller
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleUpdateStatus() {

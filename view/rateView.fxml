@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.rateController">
+   <children>
+      <Label layoutX="238.0" layoutY="14.0" text="Rate and Review media" />
+      <ListView fx:id="entryListView" layoutX="38.0" layoutY="60.0" prefHeight="249.0" prefWidth="240.0" />
+      <TextArea fx:id="reviewField" layoutX="368.0" layoutY="143.0" prefHeight="168.0" prefWidth="200.0" />
+      <TextField fx:id="ratingField" layoutX="368.0" layoutY="77.0" prefHeight="25.0" prefWidth="93.0" />
+      <Label layoutX="368.0" layoutY="60.0" prefHeight="17.0" prefWidth="71.0" text="Rating(1-5)" />
+      <Label layoutX="368.0" layoutY="126.0" text="Review" />
+      <Button fx:id="confirmButton" layoutX="238.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" />
+      <Button fx:id="cancelButton" layoutX="336.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+      <Label fx:id="errorLabel" layoutX="300.0" layoutY="318.0" />
+   </children>
+</AnchorPane>
