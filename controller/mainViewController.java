@@ -16,6 +16,7 @@ public class mainViewController {
     @FXML private Label usernameLabel;
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;
+    @FXML private Label errorLabel;
     // @FXML private ListView<Media> library;
 
     /*
@@ -202,7 +203,7 @@ public class mainViewController {
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
 
             if (matches.isEmpty()) {
-                System.out.println("No entries found for that media type."); // lagyan to ng label
+                errorLabel.setText("No entries found for that media type.");
                 return;
             }
 
@@ -251,7 +252,7 @@ public class mainViewController {
             ArrayList<Media> completed = profile.getLibrary().filterByStatus(Status.COMPLETED);
 
             if (completed.isEmpty()) {
-                System.out.println("No completed entries available to rate/review."); // NEED LAGYAN ERROR LABEL MAIN VIEW
+                errorLabel.setText("No completed entries available to rate/review.");
                 return;
             }
 
@@ -290,7 +291,7 @@ public class mainViewController {
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
 
             if (matches.isEmpty()) {
-                System.out.println("No entries found for that media type."); // MAKE AN ERROR LABEL FOR THIS DONT FORGET TO REPLACCE
+                errorLabel.setText("No entries found for that media type.");
                 return;
             }
 
