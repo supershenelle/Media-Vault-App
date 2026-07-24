@@ -250,7 +250,45 @@ public class mainViewController {
     }
 
     public void handleUpdateStatus() {
+        try {
+            // get media type (or wag na papiliin media type? lagay nalang lahat ng medias in the listview)
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mediaTypeView.fxml"));
+            Parent root = loader.load();
+            mediaTypeController typeController = loader.getController();
 
+            Stage typeStage = new Stage();
+            typeStage.setTitle("Update Media Status");
+            typeStage.setScene(new Scene(root));
+            typeStage.showAndWait();
+
+            if (!typeController.isConfirmed()) return;
+
+            // get filtered media objects
+            String type = typeController.getSelectedType();
+            ArrayList<Media> matches = profile.getLibrary().filterByType(type);
+
+            if (matches.isEmpty()) {
+                System.out.println("No entries found for that media type."); // MAKE AN ERROR LABEL FOR THIS DONT FORGET TO REPLACCE
+                return;
+            }
+
+            // load update status window
+            FXMLLoader statusLoader = new FXMLLoader(getClass().getResource("/view/updateStatusView.fxml"));
+            Parent statusRoot = statusLoader.load();
+            updateStatusController statusController = statusLoader.getController();
+            statusController.init(matches);
+
+            Stage statusStage = new Stage();
+            statusStage.setTitle("Update Media Status");
+            statusStage.setScene(new Scene(statusRoot));
+            statusStage.showAndWait();
+
+            if (!statusController.isConfirmed()) return;
+
+            updateRecent();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleUpdateDiscography() {
