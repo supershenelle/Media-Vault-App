@@ -315,7 +315,38 @@ public class mainViewController {
     }
 
     public void handleUpdateDiscography() {
+        try {
+            // get only artists media objects in the library
+            ArrayList<Media> matches = profile.getLibrary().filterByType("Music Artist"); // filter by type returns media class so dapat media
 
+            if (matches.isEmpty()) {
+                errorLabel.setText("No artists found in library.");
+                return;
+            }
+
+            // make it music artists class para magamit music artists methods
+            ArrayList<MusicArtist> artists = new ArrayList<>();
+            for (Media media : matches) {
+                artists.add((MusicArtist) media);
+            }
+
+            
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/updateDiscographyView.fxml"));
+            Parent root = loader.load();
+            updateDiscographyController discographyController = loader.getController();
+            discographyController.init(artists);
+
+            Stage discographyStage = new Stage();
+            discographyStage.setTitle("Update Artist Discography Logs");
+            discographyStage.setScene(new Scene(root));
+            discographyStage.showAndWait();
+
+            if (!discographyController.isConfirmed()) return;
+
+            updateRecent();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
     public void handleSummary() {

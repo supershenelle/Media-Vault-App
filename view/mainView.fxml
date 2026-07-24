@@ -180,7 +180,7 @@
                         <Font name="pixelmix Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Label fx:id="errorLabel" layoutX="538.0" layoutY="131.0" text="LABEL" textFill="#ff0606" />
+                  <Label fx:id="errorLabel" layoutX="538.0" layoutY="131.0" textFill="#ff0606" />
                </children>
             </AnchorPane>
             <GridPane layoutX="99.0" layoutY="461.0" prefHeight="13.0" prefWidth="602.0" styleClass="pixel-button">
