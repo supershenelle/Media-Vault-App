@@ -52,6 +52,6 @@ public class createProfileController {
         Profile newProfile = new Profile(username, displayName, bio);
         profiles.add(newProfile);
 
-        sceneController.showLoginAfterProfileCreation();
+        sceneController.showMainView(newProfile);
     }
 }

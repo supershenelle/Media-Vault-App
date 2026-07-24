@@ -13,29 +13,22 @@ public class SceneController {
     private Stage stage;
     private Scene scene;
     private List<Profile> profiles;
-    private boolean playLoginVideoOnNextLogin;
 
     public SceneController(Stage stage, List<Profile> profiles) {
         this.stage = stage;
         this.profiles = profiles;
     }
 
+    // 1. Shows the Scene Builder FXML screen (loginView.fxml)
     public void showLogin() {
-        showLogin(false);
-    }
-
-    public void showLoginAfterProfileCreation() {
-        showLogin(true);
-    }
-
-    private void showLogin(boolean playVideo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginView.fxml"));
             Parent root = loader.load();
 
+            // Connect your login controller if needed
             loginController controller = loader.getController();
             if (controller != null) {
-                controller.init(this, profiles, playVideo);
+                controller.init(this, profiles);
             }
 
             scene = new Scene(root);

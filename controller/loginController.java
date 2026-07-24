@@ -3,63 +3,23 @@ package controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
 import model.Profile;
 
-import java.net.URL;
 import java.util.List;
 
 public class loginController {
     @FXML private Button createProfileButton;
     @FXML private Button exitProgramButton;
-    @FXML private MediaView loginVideoView;
 
+    //private loginView loginView;
     private SceneController sceneController;
-    private List<Profile> profiles;
-    private MediaPlayer mediaPlayer;
+    private List<Profile> profiles; // wherever your saved profiles come from
 
     public void init(SceneController sceneController, List<Profile> profiles) {
-        init(sceneController, profiles, true);
-    }
-
-    public void init(SceneController sceneController, List<Profile> profiles, boolean playVideo) {
         this.sceneController = sceneController;
         this.profiles = profiles;
-
-        if (playVideo) {
-            playLoginVideo();
-        }
     }
-
-    public void playLoginVideo() {
-        if (loginVideoView == null) {
-            return;
-        }
-
-        URL videoUrl = getClass().getResource("/video/login.mp4");
-        if (videoUrl == null) {
-            videoUrl = getClass().getResource("/video/loading.mp4");
-        }
-
-        if (videoUrl == null) {
-            System.err.println("Login video not found in /video/login.mp4 or /video/loading.mp4.");
-            return;
-        }
-
-        if (mediaPlayer != null) {
-            mediaPlayer.stop();
-            mediaPlayer.dispose();
-        }
-
-        Media media = new Media(videoUrl.toExternalForm());
-        mediaPlayer = new MediaPlayer(media);
-        loginVideoView.setMediaPlayer(mediaPlayer);
-        mediaPlayer.setCycleCount(MediaPlayer.INDEFINITE);
-        mediaPlayer.play();
-    }
-
+    
     public void handleCreateProfile() {
         sceneController.showCreateProfile();
     }
@@ -67,4 +27,47 @@ public class loginController {
     public void handleExitProgram() {
         System.exit(0);
     }
+
+    /*
+    public void init(SceneController sceneController, List<Profile> profiles) {
+        this.sceneController = sceneController;
+        this.profiles = profiles;
+    }
+
+    public loginController(SceneController sceneController, loginView loginView, List<Profile> profiles) {
+        this.sceneController = sceneController;
+        this.loginView = loginView;
+        this.profiles = profiles;
+
+        loginView.getLoginButton().setOnAction(e -> handleLogin());
+        loginView.getCreateProfileButton().setOnAction(e -> sceneController.showCreateProfile());
+    }
+
+    private void handleLogin() {
+        String username = loginView.getUsernameField().getText().trim();
+
+        if (username.isEmpty()) {
+            loginView.getErrorLabel().setText("Please enter a username.");
+            return;
+        }
+
+        Profile match = profiles.stream()
+                .filter(p -> p.getUsername().equalsIgnoreCase(username))
+                .findFirst()
+                .orElse(null);
+
+        if (match == null) {
+            loginView.getErrorLabel().setText("Profile not found.");
+            return;
+        }
+
+        // success — switch scene to main app
+        sceneController.showMainView(match);
+//        mainView mainView = new mainView(match.getLibrary());
+//        stage.setScene(mainView.getScene());
+
+
+
+    }
+    */
 }
