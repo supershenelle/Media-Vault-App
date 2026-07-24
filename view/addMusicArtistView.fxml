@@ -59,13 +59,13 @@
          </font>
       </Label>
       <TextField fx:id="nameField" layoutX="106.0" layoutY="122.0" />
-      <TextArea fx:id="descriptionField" layoutX="100.0" layoutY="169.0" prefHeight="36.0" prefWidth="158.0" />
-      <Button fx:id="confirmButton" layoutX="109.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
+      <TextArea fx:id="descriptionField" layoutX="106.0" layoutY="170.0" prefHeight="39.0" prefWidth="149.0" />
+      <Button fx:id="confirmButton" layoutX="106.0" layoutY="217.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </Button>
-      <RadioButton fx:id="planningRadio" layoutX="432.0" layoutY="113.0" mnemonicParsing="false" text="Planning">
+      <RadioButton fx:id="planningRadio" layoutX="402.0" layoutY="161.0" mnemonicParsing="false" text="Planning">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
@@ -73,7 +73,7 @@
             <ToggleGroup fx:id="statusGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="inProgressRadio" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
+      <RadioButton fx:id="inProgressRadio" layoutX="402.0" layoutY="185.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
@@ -85,8 +85,46 @@
             <Font name="04b25" size="34.0" />
          </font>
       </Label>
-      <Button fx:id="addAlbumButton" layoutX="183.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleAddAlbum" text="Add Album" />
-      <ListView fx:id="albumListView" layoutX="290.0" layoutY="116.0" prefHeight="123.0" prefWidth="125.0" />
-      <Label layoutX="339.0" layoutY="95.0" text="Albums" />
+      <Button fx:id="addAlbumButton" layoutX="403.0" layoutY="215.0" mnemonicParsing="false" onAction="#handleAddAlbum" text="Add Album">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Button>
+      <ListView fx:id="albumListView" layoutX="269.0" layoutY="122.0" prefHeight="117.0" prefWidth="125.0" />
+      <Label alignment="CENTER" layoutX="303.0" layoutY="104.0" text="Albums">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="52.0" layoutX="402.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="149.0" />
+      <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/addmediatype.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="412.0" layoutY="106.0" prefWidth="130.0" text="IN CASE OF MULTIPLE ALBUMS" textFill="#aa0a0a">
+         <font>
+            <Font name="pixelmix Regular" size="7.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="118.0" text="- Input Album Name" textFill="#3f0505">
+         <font>
+            <Font name="pixelmix Regular" size="7.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="128.0" text="- Click Add Album" textFill="#3f0505">
+         <font>
+            <Font name="pixelmix Regular" size="7.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="138.0" text="- Repeat for all Albums" textFill="#3f0505">
+         <font>
+            <Font name="pixelmix Regular" size="7.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="50.0" prefHeight="36.0" prefWidth="293.0" text="Add Discography">
+         <font>
+            <Font name="04b25" size="34.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
