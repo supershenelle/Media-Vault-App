@@ -106,17 +106,17 @@
             <Font name="pixelmix Regular" size="7.0" />
          </font>
       </Label>
-      <Label layoutX="416.0" layoutY="118.0" text="- Input Album Name" textFill="#3f0505">
+      <Label layoutX="411.0" layoutY="128.0" text="- Fill up Prompt (New Window)" textFill="#3f0505">
          <font>
             <Font name="pixelmix Regular" size="7.0" />
          </font>
       </Label>
-      <Label layoutX="416.0" layoutY="128.0" text="- Click Add Album" textFill="#3f0505">
+      <Label layoutX="411.0" layoutY="118.0" text="- Click Add Album" textFill="#3f0505">
          <font>
             <Font name="pixelmix Regular" size="7.0" />
          </font>
       </Label>
-      <Label layoutX="416.0" layoutY="138.0" text="- Repeat for all Albums" textFill="#3f0505">
+      <Label layoutX="411.0" layoutY="138.0" text="- Repeat for all Albums" textFill="#3f0505">
          <font>
             <Font name="pixelmix Regular" size="7.0" />
          </font>
