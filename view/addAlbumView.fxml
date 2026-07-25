@@ -68,13 +68,13 @@
       </Label>
       <TextField fx:id="titleField" layoutX="108.0" layoutY="129.0" />
       <TextField fx:id="genreField" layoutX="108.0" layoutY="179.0" />
-      <TextField fx:id="yearField" layoutX="268.0" layoutY="129.0" prefHeight="25.0" prefWidth="149.0" />
+      <TextField fx:id="yearField" layoutX="268.0" layoutY="129.0" prefHeight="25.0" prefWidth="133.0" />
       <Button fx:id="confirmButton" layoutX="109.0" layoutY="212.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </Button>
-      <RadioButton fx:id="planningRadio" layoutX="432.0" layoutY="113.0" mnemonicParsing="false" text="Planning">
+      <RadioButton fx:id="planningRadio" layoutX="417.0" layoutY="146.0" mnemonicParsing="false" text="Planning">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
@@ -82,11 +82,16 @@
             <ToggleGroup fx:id="statusGroup" />
          </toggleGroup>
       </RadioButton>
-      <RadioButton fx:id="inProgressRadio" layoutX="432.0" layoutY="135.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
+      <RadioButton fx:id="inProgressRadio" layoutX="417.0" layoutY="168.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font>
       </RadioButton>
+      <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/addmediatype.png" />
+         </image>
+      </ImageView>
       <Label fx:id="errorLabel" layoutX="329.0" layoutY="40.0" prefHeight="17.0" prefWidth="219.0" textFill="RED" />
       <Line endX="550.1666870117188" endY="68.16665649414062" layoutY="-3.0" startX="332.626220703125" startY="68.16667175292969" stroke="WHITE" />
       <Label layoutX="60.0" layoutY="49.0" prefHeight="36.0" prefWidth="293.0" text="Add Album Entry">
@@ -94,6 +99,6 @@
             <Font name="04b25" size="34.0" />
          </font>
       </Label>
-      <TextField fx:id="trackCountField" layoutX="268.0" layoutY="181.0" />
+      <TextField fx:id="trackCountField" layoutX="268.0" layoutY="181.0" prefHeight="25.0" prefWidth="133.0" />
    </children>
 </AnchorPane>

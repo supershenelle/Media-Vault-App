@@ -5,19 +5,59 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.rateController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.rateController">
    <children>
-      <Label layoutX="238.0" layoutY="14.0" text="Rate and Review media" />
-      <ListView fx:id="entryListView" layoutX="38.0" layoutY="60.0" prefHeight="249.0" prefWidth="240.0" />
-      <TextArea fx:id="reviewField" layoutX="368.0" layoutY="143.0" prefHeight="168.0" prefWidth="200.0" />
-      <TextField fx:id="ratingField" layoutX="368.0" layoutY="77.0" prefHeight="25.0" prefWidth="93.0" />
-      <Label layoutX="368.0" layoutY="60.0" prefHeight="17.0" prefWidth="71.0" text="Rating(1-5)" />
-      <Label layoutX="368.0" layoutY="126.0" text="Review" />
-      <Button fx:id="confirmButton" layoutX="238.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" />
-      <Button fx:id="cancelButton" layoutX="336.0" layoutY="342.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+      <ImageView fitHeight="455.0" fitWidth="607.0" pickOnBounds="true">
+         <image>
+            <Image url="@../resources/ratereviewbg.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#00000059" height="354.0" layoutY="101.0" stroke="WHITE" strokeType="INSIDE" width="607.0" />
+      <Label layoutX="175.0" layoutY="46.0" prefHeight="48.0" prefWidth="107.0" text="RATE" textFill="WHITE">
+         <font>
+            <Font name="04b25" size="47.0" />
+         </font></Label>
+      <ListView fx:id="entryListView" layoutX="68.0" layoutY="152.0" prefHeight="189.0" prefWidth="213.0" />
+      <TextArea fx:id="reviewField" layoutX="322.0" layoutY="211.0" prefHeight="129.0" prefWidth="200.0" />
+      <TextField fx:id="ratingField" layoutX="322.0" layoutY="151.0" prefHeight="25.0" prefWidth="71.0" />
+      <Label layoutX="324.0" layoutY="130.0" prefHeight="17.0" prefWidth="115.0" text="Rating (1-5)" textFill="#efefef">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Label>
+      <Button fx:id="confirmButton" layoutX="206.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" layoutX="322.0" layoutY="367.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Button>
       <Label fx:id="errorLabel" layoutX="300.0" layoutY="318.0" />
+      <Label layoutX="330.0" layoutY="46.0" prefHeight="48.0" prefWidth="146.0" text="REVIEW" textFill="WHITE">
+         <font>
+            <Font name="04b25" size="47.0" />
+         </font>
+      </Label>
+      <Label layoutX="70.0" layoutY="129.0" prefHeight="17.0" prefWidth="115.0" text="Media List" textFill="#efefef">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="325.0" layoutY="187.0" prefHeight="17.0" prefWidth="115.0" text="Review" textFill="#efefef">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="455.0" fitWidth="635.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/overlay.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
