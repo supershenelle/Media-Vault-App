@@ -1,11 +1,13 @@
 package controller;
 
+import javafx.animation.PauseTransition;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import model.*;
 
 import java.io.IOException;
@@ -89,6 +91,17 @@ public class mainViewController {
         }
     }
 
+    private void showError(String message)
+    {
+        if (errorLabel != null) {
+            errorLabel.setText(message);
+
+            // Hide message automatically after 3 seconds
+            PauseTransition pause = new PauseTransition(Duration.seconds(3));
+            pause.setOnFinished(e -> errorLabel.setText(""));
+            pause.play();
+        }
+    }
 
     public void handleAdd() {
         try {
@@ -203,7 +216,7 @@ public class mainViewController {
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
 
             if (matches.isEmpty()) {
-                errorLabel.setText("No entries found for that media type.");
+                showError("No entries found for that media type.");
                 return;
             }
 
@@ -252,7 +265,7 @@ public class mainViewController {
             ArrayList<Media> completed = profile.getLibrary().filterByStatus(Status.COMPLETED);
 
             if (completed.isEmpty()) {
-                errorLabel.setText("No completed entries available to rate/review.");
+                showError("No completed entries available to rate/review.");
                 return;
             }
 
@@ -291,7 +304,7 @@ public class mainViewController {
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
 
             if (matches.isEmpty()) {
-                errorLabel.setText("No entries found for that media type.");
+                showError("No entries found for that media type.");
                 return;
             }
 
@@ -320,7 +333,7 @@ public class mainViewController {
             ArrayList<Media> matches = profile.getLibrary().filterByType("Music Artist"); // filter by type returns media class so dapat media
 
             if (matches.isEmpty()) {
-                errorLabel.setText("No artists found in library.");
+                showError("No artists found in library.");
                 return;
             }
 
