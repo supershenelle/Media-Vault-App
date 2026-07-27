@@ -19,6 +19,7 @@ public class mainViewController {
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;
     @FXML private Label errorLabel;
+    private SceneController sceneController;
     // @FXML private ListView<Media> library;
 
     /*
@@ -39,8 +40,9 @@ public class mainViewController {
 
     private Profile profile;
 
-    public void init(Profile profile, Stage stage) {
+    public void init(Profile profile, Stage stage, SceneController sceneController) {
         this.profile = profile;
+        this.sceneController = sceneController;
         // Library lib = profile.getLibrary();
 
         usernameLabel.setText("Username: @" + profile.getUsername());
@@ -381,7 +383,7 @@ public class mainViewController {
     }
 
     public void handleLogout() {
-
+        sceneController.showLogin();
     }
 
     
