@@ -363,6 +363,20 @@ public class mainViewController {
     }
 
     public void handleSummary() {
+        try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/summaryView.fxml"));
+        Parent root = loader.load();
+        summaryController summaryController1 = loader.getController(); // HUHU SAME NAME PALA SILA
+        summaryController1.init(profile.getLibrary());
+
+        Stage summaryStage = new Stage();
+        summaryStage.setTitle("Library Summary");
+        summaryStage.setScene(new Scene(root));
+        summaryStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
