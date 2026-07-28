@@ -70,7 +70,7 @@ public class SceneController {
 
             mainViewController controller = loader.getController();
             if (controller != null) {
-                controller.init(profile, stage);
+                controller.init(profile, stage, this);
             }
 
             scene = new Scene(root);

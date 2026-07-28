@@ -19,6 +19,7 @@ public class mainViewController {
     @FXML private Label displayNameLabel;
     @FXML private Label bioLabel;
     @FXML private Label errorLabel;
+    private SceneController sceneController;
     // @FXML private ListView<Media> library;
 
     /*
@@ -39,8 +40,9 @@ public class mainViewController {
 
     private Profile profile;
 
-    public void init(Profile profile, Stage stage) {
+    public void init(Profile profile, Stage stage, SceneController sceneController) {
         this.profile = profile;
+        this.sceneController = sceneController;
         // Library lib = profile.getLibrary();
 
         usernameLabel.setText("Username: @" + profile.getUsername());
@@ -363,11 +365,25 @@ public class mainViewController {
     }
 
     public void handleSummary() {
+        try {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/summaryView.fxml"));
+        Parent root = loader.load();
+        summaryController summaryController1 = loader.getController(); // HUHU SAME NAME PALA SILA
+        summaryController1.init(profile.getLibrary());
+
+        Stage summaryStage = new Stage();
+        summaryStage.setTitle("Library Summary");
+        summaryStage.setScene(new Scene(root));
+        summaryStage.showAndWait();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 
     public void handleLogout() {
-
+        sceneController.showLogin();
     }
 
     
