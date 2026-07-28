@@ -5,22 +5,82 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.updateStatusController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.updateStatusController">
    <children>
-      <ListView fx:id="entryListView" layoutX="36.0" layoutY="45.0" prefHeight="329.0" prefWidth="257.0" />
-      <Label layoutX="237.0" layoutY="5.0" text="Update Media Status" />
-      <RadioButton fx:id="plannedRadio" layoutX="314.0" layoutY="201.0" mnemonicParsing="false" text="planning">
+      <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/addmediatype.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="300.0" stroke="BLACK" strokeType="INSIDE" width="600.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.20543642342090607" green="0.1410006433725357" blue="0.3684210479259491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="0.006711409395973154">
+                     <color>
+                        <Color red="0.20543642342090607" green="0.1410006433725357" blue="0.3684210479259491" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.04184715822339058" green="0.0067684645764529705" blue="0.08771929889917374" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#ffffff85" height="159.0" layoutX="88.0" layoutY="99.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="477.0" />
+      <ListView fx:id="entryListView" layoutX="108.0" layoutY="120.0" prefHeight="115.0" prefWidth="257.0" />
+      <RadioButton fx:id="plannedRadio" layoutX="403.0" layoutY="134.0" mnemonicParsing="false" text="Planning">
          <toggleGroup>
             <ToggleGroup fx:id="statusGroup" />
          </toggleGroup>
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font>
       </RadioButton>
-      <RadioButton fx:id="inProgressRadio" layoutX="407.0" layoutY="201.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup" />
-      <RadioButton fx:id="completedRadio" layoutX="499.0" layoutY="201.0" mnemonicParsing="false" text="Completed" toggleGroup="$statusGroup" />
-      <Button fx:id="confirmButton" layoutX="360.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm" />
-      <Button fx:id="cancelButton" layoutX="462.0" layoutY="274.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+      <RadioButton fx:id="inProgressRadio" layoutX="403.0" layoutY="179.0" mnemonicParsing="false" text="In Progress" toggleGroup="$statusGroup">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></RadioButton>
+      <RadioButton fx:id="completedRadio" layoutX="403.0" layoutY="155.0" mnemonicParsing="false" text="Completed" toggleGroup="$statusGroup">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></RadioButton>
+      <Button fx:id="confirmButton" layoutX="384.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleConfirm" text="Confirm">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Button>
+      <Button fx:id="cancelButton" layoutX="471.0" layoutY="207.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel">
+         <font>
+            <Font name="pixelmix Regular" size="12.0" />
+         </font></Button>
       <Label fx:id="errorLabel" layoutX="433.0" layoutY="149.0" />
+      <ImageView fitHeight="300.0" fitWidth="600.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../resources/addmediatype.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="59.0" layoutY="48.0" text="Update Status">
+         <font>
+            <Font name="04b25" size="38.0" />
+         </font></Label>
+      <Line endX="539.3333129882812" endY="68.16667938232422" layoutX="10.0" layoutY="7.0" startX="327.9999694824219" startY="68.16667938232422" stroke="WHITE" />
    </children>
 </AnchorPane>
