@@ -75,8 +75,9 @@ public class SceneController {
 
             scene = new Scene(root);
             stage.setScene(scene);
-            stage.setResizable(false);
+            stage.setResizable(true);
             stage.show();
+            stage.centerOnScreen();
             stage.sizeToScene();
 
         } catch (IOException e) {
