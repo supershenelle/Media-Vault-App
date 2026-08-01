@@ -256,4 +256,19 @@ public class Library {
         }
         return filtered;
     }
+
+    /**
+     * filter all entries by favorite
+     * @return new arraylist containing only entries with favorite status
+     */
+    public ArrayList<Media> getFavorites()
+    {
+        ArrayList<Media> favorites = new ArrayList<>();
+        for (Media media : entries)
+        {
+            if (media.isFavorite())
+                favorites.add(media);
+        }
+        return favorites;
+    }
 }

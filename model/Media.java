@@ -8,6 +8,7 @@ public abstract class Media {
     private Status status;
     private int rating;
     private String review;
+    private boolean favorite;
 
     /**
      * constructs shared media state
@@ -20,6 +21,7 @@ public abstract class Media {
         this.status = status;
         rating = 0;
         review = "";
+        favorite = false;
     }
 
     /**
@@ -140,6 +142,25 @@ public abstract class Media {
             info += "\nReview: " + review;
         }
         return info;
+    }
+
+    /**
+     * checks if media entry is marked as favorite
+     * @return true if favorite, false otherwise
+     */
+    public boolean isFavorite()
+    {
+        return favorite;
+    }
+
+    /**
+     * toggles the favorite status of the media entry
+     * @return new favorite status
+     */
+    public boolean toggleFavorite()
+    {
+        favorite = !favorite;
+        return favorite;
     }
 
     @Override

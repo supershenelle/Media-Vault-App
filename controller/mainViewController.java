@@ -38,6 +38,11 @@ public class mainViewController {
     @FXML private Label game1, game2, game3;
     @FXML private Label disco1, disco2, disco3;
 
+    // para sa favorites
+    @FXML private Label movie11, movie21, movie31;
+    @FXML private Label game11, game21, game31;
+    @FXML private Label disco11, disco21, disco31;
+
     private Profile profile;
 
     public void init(Profile profile, Stage stage, SceneController sceneController) {
@@ -78,6 +83,31 @@ public class mainViewController {
         fillBoxes(disco, discoBox);
     }
 
+    public void updateFavorites(){
+        Label[] favMovieBox = {movie11, movie21, movie31};
+        Label[] favGameBox = {game11, game21, game31};
+        Label[] favDiscoBox = {disco11, disco21, disco31};
+
+        List<Media> favMovies = new ArrayList<>();
+        List<Media> favGames = new ArrayList<>();
+        List<Media> favDisco = new ArrayList<>();
+
+        for (Media item : profile.getLibrary().getFavorites())
+        {
+            if (item instanceof Movie)
+                favMovies.add(item);
+
+            else if (item instanceof Videogame)
+                favGames.add(item);
+
+            else if (item instanceof MusicArtist)
+                favDisco.add(item);
+
+            fillBoxes(favMovies, favMovieBox);
+            fillBoxes(favGames, favGameBox);
+            fillBoxes(favDisco, favDiscoBox);
+        }
+    }
     private void fillBoxes(List<Media> items, Label[] labels) {
         int size = items.size();
         for (int i = 0; i < labels.length; i++)
@@ -116,7 +146,8 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait(); // pauses here until typeStage.close() runs
 
-            if (!typeController.isConfirmed()) return; // user closed without picking
+            if (!typeController.isConfirmed()) // user closed without picking
+                return;
 
             switch (typeController.getSelectedType()) {
                 case "model.Movie" -> addMovie();
@@ -166,7 +197,8 @@ public class mainViewController {
             movieStage.setScene(new Scene(root));
             movieStage.showAndWait();
 
-            if (!videogameController.isConfirmed()) return;
+            if (!videogameController.isConfirmed())
+                return;
 
             profile.getLibrary().addEntry(videogameController.getResult());
             updateRecent();
@@ -189,7 +221,8 @@ public class mainViewController {
             artistStage.setScene(new Scene(root));
             artistStage.showAndWait();
 
-            if (!musicArtistController.isConfirmed()) return;
+            if (!musicArtistController.isConfirmed())
+                return;
 
             profile.getLibrary().addEntry(musicArtistController.getResult());
             updateRecent();
@@ -212,7 +245,8 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait();
 
-            if (!typeController.isConfirmed()) return; // close if di pumili
+            if (!typeController.isConfirmed())
+                return; // close if di pumili
 
             String type = typeController.getSelectedType();
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
@@ -233,7 +267,8 @@ public class mainViewController {
             removeStage.setScene(new Scene(removeRoot));
             removeStage.showAndWait();
 
-            if (!removeController.isConfirmed()) return;
+            if (!removeController.isConfirmed())
+                return;
 
             // Step 3: remove and refresh
             profile.getLibrary().removeEntry(removeController.getSelectedEntry());
@@ -299,7 +334,8 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait();
 
-            if (!typeController.isConfirmed()) return;
+            if (!typeController.isConfirmed())
+                return;
 
             // get filtered media objects
             String type = typeController.getSelectedType();
@@ -321,7 +357,8 @@ public class mainViewController {
             statusStage.setScene(new Scene(statusRoot));
             statusStage.showAndWait();
 
-            if (!statusController.isConfirmed()) return;
+            if (!statusController.isConfirmed())
+                return;
 
             updateRecent();
         } catch (IOException e) {
@@ -356,7 +393,8 @@ public class mainViewController {
             discographyStage.setScene(new Scene(root));
             discographyStage.showAndWait();
 
-            if (!discographyController.isConfirmed()) return;
+            if (!discographyController.isConfirmed())
+                return;
 
             updateRecent();
         } catch (IOException e) {
@@ -382,6 +420,32 @@ public class mainViewController {
 
     }
 
+    public void handleFavorite(){
+            try {
+                // get media entries in library
+                ArrayList<Media> all = profile.getLibrary().getEntries();
+                if (all.isEmpty()) {
+                    showError("No entries in library yet.");
+                    return;
+                }
+
+                // load addFavoriteView
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addFavoriteView.fxml"));
+                Parent root = loader.load();
+                addFavoriteController favController = loader.getController();
+                favController.init(all);
+
+                Stage favStage = new Stage();
+                favStage.setTitle("Toggle Favorites");
+                favStage.setScene(new Scene(root));
+                favStage.showAndWait();
+
+                updateFavorites();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+    }
     public void handleLogout() {
         sceneController.showLogin();
     }

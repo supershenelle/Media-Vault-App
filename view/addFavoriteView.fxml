@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addFavoriteController">
+   <children>
+      <ListView fx:id="entryListView" layoutX="51.0" layoutY="76.0" prefHeight="245.0" prefWidth="200.0" />
+      <Label layoutX="267.0" layoutY="14.0" text="Add favorite" />
+      <Label fx:id="errorLabel" layoutX="435.0" layoutY="181.0" />
+      <Button fx:id="toggleButton" layoutX="355.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleToggle" text="toggle favorite" />
+      <Button fx:id="closeButton" layoutX="467.0" layoutY="224.0" mnemonicParsing="false" onAction="#handleClose" text="close" />
+   </children>
+</AnchorPane>
