@@ -19,16 +19,18 @@ public class SceneController {
         this.profiles = profiles;
     }
 
-    // 1. Shows the Scene Builder FXML screen (loginView.fxml)
+    /**
+     * Shows the Scene Builder FXML screen (loginView.fxml)
+     */
     public void showLogin() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/loginView.fxml"));
             Parent root = loader.load();
 
             // Connect your login controller if needed
-            loginController controller = loader.getController();
-            if (controller != null) {
-                controller.init(this, profiles);
+            loginController logController = loader.getController();
+            if (logController != null) {
+                logController.init(this, profiles);
             }
 
             scene = new Scene(root);
@@ -41,14 +43,16 @@ public class SceneController {
             e.printStackTrace();
         }
     }
-
+    /**
+     * Switches to createProfileView when create profile button is clicked
+     */
     public void showCreateProfile() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/createProfileView.fxml"));
             Parent root = loader.load();
 
-            createProfileController controller = loader.getController();
-            controller.init(this, profiles);
+            createProfileController profileController = loader.getController();
+            profileController.init(this, profiles);
 
             scene = new Scene(root);
             stage.setScene(scene);
@@ -62,15 +66,18 @@ public class SceneController {
         }
     }
 
-    // 2. Shows the main app screen after logging in (mainView.fxml)
+    /**
+     * switches to main view after show create profile
+     * @param profile is the profile to be used (created in createProfileController)
+     */
     public void showMainView(Profile profile) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mainView.fxml"));
             Parent root = loader.load();
 
-            mainViewController controller = loader.getController();
-            if (controller != null) {
-                controller.init(profile, stage, this);
+            mainViewController mainController = loader.getController();
+            if (mainController != null) {
+                mainController.init(profile, stage, this);
             }
 
             scene = new Scene(root);

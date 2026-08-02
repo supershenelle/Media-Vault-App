@@ -15,15 +15,26 @@ public class loginController {
     private SceneController sceneController;
     private List<Profile> profiles; // wherever your saved profiles come from
 
+    /**
+     * gives access to scene controller and profile
+     * @param sceneController used for changing scenes
+     * @param profiles list of profiles
+     */
     public void init(SceneController sceneController, List<Profile> profiles) {
         this.sceneController = sceneController;
         this.profiles = profiles;
     }
-    
+
+    /**
+     * switches to createProfileView using the sceneController
+     */
     public void handleCreateProfile() {
         sceneController.showCreateProfile();
     }
 
+    /**
+     * closes the program
+     */
     public void handleExitProgram() {
         System.exit(0);
     }

@@ -22,6 +22,10 @@ public class summaryController {
     int completedRatedCount = 0;
     int completedRatingTotal = 0;
 
+    /**
+     * summarize library's entries by status and rating, then updates the summary labels with the computed totals/average
+     * @param library the library to summarize
+     */
     public void init(Library library) {
 
         for (Media media : library.getEntries()) {
@@ -54,6 +58,9 @@ public class summaryController {
 
     }
 
+    /**
+     * closes the window
+     */
     public void handleClose() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();

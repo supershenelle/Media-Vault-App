@@ -19,6 +19,10 @@ public class removeMediaController {
     private Media selectedEntry;
     private boolean confirmed = false;
 
+    /**
+     * display in list view the titles of the media entries
+     * @param entries contains the media entries to display
+     */
     public void init(ArrayList<Media> entries) {
         this.entries = entries;
 
@@ -27,6 +31,10 @@ public class removeMediaController {
         }
     }
 
+    /**
+     * get selected list item, stores the corresponding media entry
+     * to be removed, mark confirmed as true, and closes the window.
+     */
     public void handleRemove() {
 
         int selectedIndex = entryListView.getSelectionModel().getSelectedIndex();
@@ -43,16 +51,27 @@ public class removeMediaController {
         stage.close();
     }
 
+    /**
+     * set confirm to false and closes window
+     */
     public void handleCancel() {
         confirmed = false;
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
-    
+
+    /**
+     * get selected media entry
+     * @return selected media entry
+     */
     public Media getSelectedEntry() {
         return selectedEntry;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

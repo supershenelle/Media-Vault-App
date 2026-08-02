@@ -81,6 +81,11 @@ public abstract class Media {
      */
     public boolean setRating(int rating)
     {
+        if (status != Status.COMPLETED) {
+            System.out.println("ERROR: Only completed entries can be rated.");
+            return false;
+        }
+
         if (rating < 1 || rating > 5)
         {
             System.out.println("ERROR: Input a number between 1 to 5 only");

@@ -25,8 +25,14 @@ public class addMusicArtistController {
     private MusicArtist musicArtist;
     private boolean confirmed = false;
 
-    
+    /**
+     * validates the artist's details input, creates MusicArtist
+     * object if not yet created, then opens the addAlbumView so the
+     * user can input an album. if confirmed,add album to discography
+     * and album list view is refreshed.
+     */
     public void handleAddAlbum() {
+        // input validation
         String name = nameField.getText().trim();
         String description = descriptionField.getText().trim();
         Status status;
@@ -51,10 +57,11 @@ public class addMusicArtistController {
             } else {
                 status = Status.IN_PROGRESS;
             }
-
+            // create music artist object if not yet created
             musicArtist = new MusicArtist(name, description, status);
         }
 
+        // open add album view to create albums
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addAlbumView.fxml"));
             Parent root = loader.load();
@@ -68,6 +75,7 @@ public class addMusicArtistController {
             if (!albumController.isConfirmed())
                 return;
 
+            // add album to discography
             musicArtist.addAlbum(albumController.getTitle(), albumController.getGenre(), albumController.getYear(), albumController.getTrackCount());
 
             // display albums in listview
@@ -87,44 +95,59 @@ public class addMusicArtistController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
-        public void handleConfirm() {
-            String name = nameField.getText().trim();
-            String description = descriptionField.getText().trim();
 
-            if (name.isEmpty()) {
-                errorLabel.setText("Artist name cannot be empty.");
-                return;
-            }
-            if (description.isEmpty()) {
-                errorLabel.setText("Description cannot be empty.");
-                return;
-            }
-            if (!planningRadio.isSelected() && !inProgressRadio.isSelected()) {
-                errorLabel.setText("Please select a status.");
-                return;
-            }
-            if (musicArtist == null || musicArtist.getAlbums().isEmpty()) {
-                errorLabel.setText("Please add at least one album.");
-                return;
-            }
+    /**
+     * validates the artist's input details and that at least one album has been added.
+     * displays an error message and returns early if invalid.
+     */
+    public void handleConfirm() {
+        // input validation
+        String name = nameField.getText().trim();
+        String description = descriptionField.getText().trim();
 
-            musicArtist.setName(name);
-            musicArtist.setDescription(description);
-
-            confirmed = true;
-
-            Stage stage = (Stage) confirmButton.getScene().getWindow();
-            stage.close();
+        if (name.isEmpty()) {
+            errorLabel.setText("Artist name cannot be empty.");
+            return;
+        }
+        if (description.isEmpty()) {
+            errorLabel.setText("Description cannot be empty.");
+            return;
+        }
+        if (!planningRadio.isSelected() && !inProgressRadio.isSelected()) {
+            errorLabel.setText("Please select a status.");
+            return;
+        }
+        if (musicArtist == null || musicArtist.getAlbums().isEmpty()) {
+            errorLabel.setText("Please add at least one album.");
+            return;
         }
 
-        public MusicArtist getResult() {
-            return musicArtist;
-        }
+        musicArtist.setName(name);
+        musicArtist.setDescription(description);
 
-        public boolean isConfirmed() {
-            return confirmed;
-        }
+        confirmed = true;
+
+        Stage stage = (Stage) confirmButton.getScene().getWindow();
+        stage.close();
+    }
+
+    /**
+     * get music artist object
+     * @return music artist object
+     */
+    public MusicArtist getResult() {
+        return musicArtist;
+    }
+
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
+    public boolean isConfirmed() {
+        return confirmed;
+    }
 
 
 }

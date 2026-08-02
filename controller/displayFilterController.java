@@ -26,11 +26,18 @@ public class displayFilterController {
 
     private Library library;
 
-
+    /**
+     * stores profile's library so it can filter entries
+     * @param library the library to filter and display
+     */
     public void init(Library library) {
         this.library = library;
     }
 
+    /**
+     * reads which status radio button is selected, filters the library
+     * by that status, and refreshes the status list view.
+     */
     public void handleStatusFilter() {
         Status status;
 
@@ -48,6 +55,10 @@ public class displayFilterController {
         refreshListView(statusListView, results);
     }
 
+    /**
+     * reads which media type radio button is selected, filters the library
+     * by that type, and refreshes the type list view.
+     */
     public void handleTypeFilter() {
         String type;
 
@@ -65,6 +76,11 @@ public class displayFilterController {
         refreshListView(typeListView, results);
     }
 
+    /**
+     * clears and repopulates list view with the given filtered results.
+     * @param listView the list view to update
+     * @param results the filtered media entries to display
+     */
     public void refreshListView(ListView<String> listView, ArrayList<Media> results) {
         listView.getItems().clear();
 
@@ -81,6 +97,9 @@ public class displayFilterController {
         }
     }
 
+    /**
+     * closes the window
+     */
     public void handleClose() {
         Stage stage = (Stage) closeButton.getScene().getWindow();
         stage.close();
