@@ -11,6 +11,11 @@ import model.Status;
 
 import java.util.ArrayList;
 
+/**
+ * controller for the displayFilterView.
+ * shows two independent filtered lists side by side: one filtered by
+ * status (Planned/In Progress/Completed) and one filtered by media type.
+ */
 public class displayFilterController {
     @FXML private RadioButton plannedRadio;
     @FXML private RadioButton inProgressRadio;

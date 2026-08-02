@@ -9,6 +9,10 @@ import model.Media;
 
 import java.util.ArrayList;
 
+/**
+ * controller for the addFavoritesView
+ * lets the user browse all library entries and mark/unmark them as favorites.
+ */
 public class addFavoriteController {
     @FXML private ListView<String> entryListView;
     @FXML private Label errorLabel;

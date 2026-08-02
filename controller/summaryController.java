@@ -8,6 +8,11 @@ import model.Library;
 import model.Media;
 import model.Status;
 
+/**
+ * controller for the summaryView.
+ * computes and displays total entry count, counts per status, and the
+ * average rating across all rated Completed entries.
+ */
 public class summaryController {
     @FXML private Label totalLabel;
     @FXML private Label plannedLabel;

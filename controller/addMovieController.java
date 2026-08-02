@@ -6,6 +6,10 @@ import javafx.stage.Stage;
 import model.Movie;
 import model.Status;
 
+/**
+ * controller for the "Add Movie Entry"
+ * validates user input and builds a movie object on confirm.
+ */
 public class addMovieController {
     @FXML private TextField titleField;
     @FXML private TextField directorField;

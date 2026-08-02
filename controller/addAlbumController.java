@@ -6,6 +6,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * controller for the "Add Album Entry", used when building
+ * a music artist's discography inside addMusicArtistController.
+ */
 public class addAlbumController {
     @FXML
     private TextField titleField;

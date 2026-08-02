@@ -6,6 +6,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.stage.Stage;
 
+/**
+ * controller for the media type selection. used whenever user to choose
+ * which media type (Movie, Videogame, or Music Artist) they want to add/remove/update.
+ */
 public class mediaTypeController {
     @FXML private RadioButton movieRadioButton, videogameRadioButton, musicArtistRadioButton;
     @FXML private Button confirmButton;

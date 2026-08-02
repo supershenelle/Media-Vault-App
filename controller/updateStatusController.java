@@ -11,6 +11,12 @@ import model.Status;
 
 import java.util.ArrayList;
 
+/**
+ * controller for updateStatusView.
+ * lets the user pick a media entry (already filtered by type) and
+ * change its status. blocked from marking Music Artist entries as
+ * Completed unless all their albums are finished.
+ */
 public class updateStatusController {
     @FXML private ListView<String> entryListView;
     @FXML private RadioButton plannedRadio;

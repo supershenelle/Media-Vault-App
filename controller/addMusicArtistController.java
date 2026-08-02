@@ -12,6 +12,11 @@ import model.Status;
 
 import java.io.IOException;
 
+/**
+ * controller for the "Add Artist Entry".
+ * validates artist details, opens the addAlbumView  to collect
+ * one or more albums, and builds a MusicArtist object on confirm.
+ */
 public class addMusicArtistController {
     @FXML private TextField nameField;
     @FXML private TextArea descriptionField;

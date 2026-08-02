@@ -7,6 +7,9 @@ import model.Profile;
 
 import java.util.List;
 
+/**
+ * controller for the login/landing screen.
+ */
 public class loginController {
     @FXML private Button createProfileButton;
     @FXML private Button exitProgramButton;

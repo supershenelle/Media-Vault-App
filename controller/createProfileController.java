@@ -9,6 +9,11 @@ import model.Profile;
 
 import java.util.List;
 
+/**
+ * controller for createProfileView.
+ * validates the new profile's fields, checks for username duplicates,
+ * adds the new Profile to the  list, and navigates to the main view.
+ */
 public class createProfileController {
     @FXML private TextField usernameField;
     @FXML private TextField displayNameField;

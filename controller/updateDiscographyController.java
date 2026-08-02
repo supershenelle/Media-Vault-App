@@ -12,6 +12,11 @@ import model.MusicArtist;
 
 import java.util.ArrayList;
 
+/**
+ * controller for updateDiscographyView.
+ * lets the user select an artist, then one of that artist's albums,
+ * and log how many songs have been listened to in that album.
+ */
 public class updateDiscographyController {
 
     @FXML private ListView<String> artistListView;

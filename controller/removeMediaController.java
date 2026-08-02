@@ -9,6 +9,11 @@ import model.Media;
 
 import java.util.ArrayList;
 
+/**
+ * controller for removeMediaView.
+ * lets the user pick one entry (already filtered by media type)
+ * from a list view and remove it from the library.
+ */
 public class removeMediaController {
     @FXML private ListView<String> entryListView;
     @FXML private Label errorLabel;

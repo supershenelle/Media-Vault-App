@@ -7,6 +7,10 @@ import model.Movie;
 import model.Status;
 import model.Videogame;
 
+/**
+ * controller for the "Add Game Entry"
+ * validates user input and builds a new Videogame object on confirm.
+ */
 public class addVideogameController {
     @FXML private TextField titleField;
     @FXML private TextField developerField;

@@ -7,6 +7,11 @@ import model.Media;
 
 import java.util.ArrayList;
 
+/**
+ * controller for the rateView. shows list of already-Completed
+ * entries (filtered before this controller is opened),so it
+ * lets the user pick one and attach a rating (1-5) review to it.
+ */
 public class rateController {
     @FXML private ListView<String> entryListView;
     @FXML private TextField ratingField;

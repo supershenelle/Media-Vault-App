@@ -14,6 +14,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * controller for the mainView. displays the logged-in profile's info,
+ * shows recently added/favorited media per type, and
+ * opens every other feature window (add, remove, filter, rate, update
+ * status, update discography, summary, favorites) as new windows.
+ */
 public class mainViewController {
     @FXML private Label usernameLabel;
     @FXML private Label displayNameLabel;

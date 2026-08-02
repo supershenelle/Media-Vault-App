@@ -9,6 +9,12 @@ import model.Profile;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * holds the primary Stage and is responsible for loading FXML screen
+ * (login, create profile, main view) into that Stage.
+ * passed into each screen's controller via init() so those controllers can
+ * navigate to other screens without needing direct references to each other.
+ */
 public class SceneController {
     private Stage stage;
     private Scene scene;
