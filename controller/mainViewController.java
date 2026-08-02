@@ -182,9 +182,9 @@ public class mainViewController {
 
             // switch to add(media form) based on what user picked
             switch (typeController.getSelectedType()) {
-                case "model.Movie" -> addMovie();
-                case "model.Videogame" -> addVideogame();
-                case "Music Artist" -> addMusicArtist();
+                case "model.Movie" : addMovie();
+                case "model.Videogame" : addVideogame();
+                case "Music Artist" : addMusicArtist();
             }
         }
         catch (IOException e)
