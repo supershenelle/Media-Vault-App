@@ -1,6 +1,6 @@
 @font-face {
     font-family: "High Cruiser";
-    src: url('highcruiser.otf');
+    src: url('Highcruiser.otf');
 }
 
 @font-face {
@@ -24,10 +24,12 @@
 }
 
 @font-face {
+    font-family: "Pixelmix";
     src: url('pixelmix.ttf');
 }
 
 @font-face {
+    font-family: "Pixelmix Bold";
     src: url('pixelmix_bold.ttf');
 }
 

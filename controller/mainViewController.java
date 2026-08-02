@@ -107,8 +107,7 @@ public class mainViewController {
         List<Media> favGames = new ArrayList<>();
         List<Media> favDisco = new ArrayList<>();
 
-        for (Media item : profile.getLibrary().getFavorites())
-        {
+        for (Media item : profile.getLibrary().getFavorites()) {
             if (item instanceof Movie)
                 favMovies.add(item);
 
@@ -117,11 +116,12 @@ public class mainViewController {
 
             else if (item instanceof MusicArtist)
                 favDisco.add(item);
+        }
 
             fillBoxes(favMovies, favMovieBox);
             fillBoxes(favGames, favGameBox);
             fillBoxes(favDisco, favDiscoBox);
-        }
+
     }
 
     /**
