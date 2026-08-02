@@ -13,7 +13,6 @@ Media Vault is a JavaFX desktop app that helps you catalog, organize, and reflec
 - ⭐ **Ratings & reviews** — rate completed entries (1-5 stars) and leave your own personal review
 - 🎧 **Music artist discographies** — track full albums per artist, with per-album listening progress
 - 📊 **Library summary & filtering** — see your stats at a glance, and filter by status or media type
-- 💾 **Persistent storage** — your vault is saved to a file and automatically reloaded next time you open the app
 - 👤 **User profiles** — each profile keeps its own personal library
 
 ---
@@ -25,7 +24,6 @@ Media Vault is a JavaFX desktop app that helps you catalog, organize, and reflec
 | **Language** | Java ☕ |
 | **GUI Framework** | JavaFX 🖼️ |
 | **Architecture** | Model-View-Controller (MVC) 🏗️ |
-| **Storage** | Plain text file I/O — no database needed 📄 |
 
 ---
 
@@ -50,12 +48,6 @@ Under the hood, every entry in your vault extends a shared abstract `Media` clas
 | 🎬 **Movie** | Director, release year, description |
 | 🎮 **Videogame** | Developer, release year, description, hours played |
 | 🎤 **Music Artist** | Description, full discography (albums with genre, year, track count, and listening progress) |
-
----
-
-## 💾 Saving & Loading
-
-No database, no fuss — your library saves straight to a plain text file and reloads automatically the next time you open the app. Close it, walk away, come back later — your vault will be exactly how you left it. 🔒
 
 ---
 

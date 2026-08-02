@@ -33,6 +33,10 @@ public abstract class Media {
         return type;
     }
 
+    /** 
+     * @param getStatus(
+     * @return String
+     */
     /**
      * get the title/name of the media entry
      * @return title/name of the media entry
@@ -114,6 +118,10 @@ public abstract class Media {
         this.review = review;
     }
 
+    /** 
+     * @param getReview(
+     * @return String
+     */
     /**
      * get details specific to the media subtype
      * @return subtype specific details
@@ -168,6 +176,9 @@ public abstract class Media {
         return favorite;
     }
 
+    /** 
+     * @return String
+     */
     @Override
     public String toString() {
         return "[" + getType() + "] " + getTitle() + " - " + getStatus().getDisplay();

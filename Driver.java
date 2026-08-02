@@ -7,6 +7,9 @@ public class Driver {
 
     private static Scanner scanner = new Scanner(System.in);
 
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         Profile profile = null;
         Library library = null;
