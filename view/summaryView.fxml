@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -26,29 +27,31 @@
             <Font name="04b25" size="29.0" />
          </font>
       </Label>
-      <Label fx:id="totalLabel" layoutX="81.0" layoutY="140.0" text="Total Entries: " textFill="WHITE">
+      <Label fx:id="totalLabel" layoutX="36.0" layoutY="108.0" prefWidth="71.0" text="Total Entries: " textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Label fx:id="plannedLabel" layoutX="92.0" layoutY="177.0" text="Planned: " textFill="WHITE">
+      <Label fx:id="plannedLabel" layoutX="34.0" layoutY="125.0" text="Planned: " textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Label fx:id="inProgressLabel" layoutX="92.0" layoutY="204.0" text="In Progress: " textFill="WHITE">
+      <Label fx:id="inProgressLabel" layoutX="39.0" layoutY="142.0" text="In Progress: " textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Label fx:id="completedLabel" layoutX="92.0" layoutY="230.0" text="Completed: " textFill="WHITE">
+      <Label fx:id="completedLabel" layoutX="39.0" layoutY="159.0" text="Completed: " textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Label fx:id="averageRatingLabel" layoutX="92.0" layoutY="258.0" text="Average rating of completed entries:" textFill="WHITE">
+      <Label fx:id="averageRatingLabel" layoutX="35.0" layoutY="176.0" text="Average rating of completed entries:" textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Button fx:id="closeButton" layoutX="238.0" layoutY="303.0" mnemonicParsing="false" onAction="#handleClose" text="Close">
+      <Label fx:id="detailsLabel" layoutX="59.0" layoutY="200.0" prefWidth="0.0" textFill="WHITE" />
+      <Button fx:id="closeButton" layoutX="372.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleClose" text="Close">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Button>
+      <ListView fx:id="entryListView" layoutX="317.0" layoutY="117.0" onMouseClicked="#handleEntrySelection" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
