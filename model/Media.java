@@ -4,18 +4,18 @@ package model;
  * represents all shared media behavior and where ratings and reviews happen
  */
 public abstract class Media {
-    private final String type;
-    private Status status;
-    private int rating;
-    private String review;
-    private boolean favorite;
+    protected final String type;
+    protected Status status;
+    protected int rating;
+    protected String review;
+    protected boolean favorite;
 
     /**
      * constructs shared media state
      * @param type media type label
      * @param status initial status
      */
-    protected Media(String type, Status status)
+    public Media(String type, Status status)
     {
         this.type = type;
         this.status = status;
