@@ -94,21 +94,11 @@
             </Label>
             <AnchorPane layoutY="-1.0" prefHeight="900.0" prefWidth="800.0">
                <children>
-                  <ImageView fitHeight="900.0" fitWidth="800.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../resources/mediaviewnew.png" />
-                     </image>
-                  </ImageView>
                   <ImageView fitHeight="607.0" fitWidth="800.0" layoutY="302.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../resources/bgmain.png" />
                      </image>
                   </ImageView>
-                  <Button fx:id="logOutButton" layoutX="655.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" styleClass="pixel-button" text="Log Out">
-                     <font>
-                        <Font name="pixelmix Regular" size="12.0" />
-                     </font>
-                  </Button>
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="519.0404052734375" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="296.0404357910156" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
                   <Rectangle arcHeight="20.0" arcWidth="20.0" fill="#00000084" height="265.0" layoutX="73.04044342041016" layoutY="177.0" stroke="WHITE" strokeType="INSIDE" width="210.0" />
@@ -129,6 +119,16 @@
                   </Label>
                   <Line endX="202.83331298828125" endY="-3.0517578125E-5" layoutX="28.0" layoutY="475.99993896484375" startX="-2.040447235107422" startY="-3.0517578125E-5" stroke="#ffffff50" />
                   <Line endX="224.1666259765625" endY="-3.0517578125E-5" layoutX="537.5404052734375" layoutY="475.99993896484375" startX="-2.5" startY="-3.0517578125E-5" stroke="#ffffff50" />
+                  <ImageView fitHeight="900.0" fitWidth="800.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/mediaviewnew.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="logOutButton" layoutX="655.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleLogout" prefHeight="25.0" prefWidth="83.0" styleClass="pixel-button" text="Log Out">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
                   <Label fx:id="movie1" alignment="CENTER" layoutX="99.04044342041016" layoutY="239.0" prefHeight="49.0" prefWidth="157.0" textAlignment="CENTER" textFill="#e9e5e5" wrapText="true">
                      <font>
                         <Font name="pixelmix Regular" size="15.0" />
@@ -215,17 +215,17 @@
                         <Font name="pixelmix Regular" size="15.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER" layoutX="109.04044342041016" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="MOVIES / FILMS" textFill="#0d0d0d">
-                     <font>
-                        <Font name="pixelmix Regular" size="15.0" />
-                     </font>
-                  </Label>
                   <Label alignment="CENTER" layoutX="333.0404357910156" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="VIDEO GAMES" textFill="#0d0d0d">
                      <font>
                         <Font name="pixelmix Regular" size="15.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER" layoutX="556.0404663085938" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="DISCOGRAPHY" textFill="#0d0d0d">
+                     <font>
+                        <Font name="pixelmix Regular" size="15.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" layoutX="109.04044342041016" layoutY="188.0" prefHeight="25.0" prefWidth="145.0" text="MOVIES / FILMS" textFill="#0d0d0d">
                      <font>
                         <Font name="pixelmix Regular" size="15.0" />
                      </font>
@@ -250,40 +250,26 @@
                         <Font name="pixelmix Regular" size="15.0" />
                      </font>
                   </Label>
-                  <GridPane layoutX="95.0" layoutY="793.0" prefHeight="13.0" prefWidth="602.0" styleClass="pixel-button">
-                     <columnConstraints>
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
-                     </columnConstraints>
-                     <rowConstraints>
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
-                     </rowConstraints>
-                     <children>
-                        <Button fx:id="addButton" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="129.0" styleClass="pixel-button" text="Add Media">
-                           <font>
-                              <Font name="pixelmix Regular" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="removeButton" mnemonicParsing="false" onAction="#handleRemove" prefHeight="25.0" prefWidth="129.0" styleClass="pixel-button" text="Remove Media" GridPane.columnIndex="1">
-                           <font>
-                              <Font name="pixelmix Regular" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="rateButton" mnemonicParsing="false" onAction="#handleRate" prefHeight="25.0" prefWidth="145.0" styleClass="pixel-button" text="Rate and Review" GridPane.columnIndex="3">
-                           <font>
-                              <Font name="pixelmix Regular" size="12.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="updateStatusButton" mnemonicParsing="false" onAction="#handleUpdateStatus" prefHeight="25.0" prefWidth="181.0" styleClass="pixel-button" text="Update Media Status" GridPane.columnIndex="2">
-                           <font>
-                              <Font name="pixelmix Regular" size="12.0" />
-                           </font>
-                        </Button>
-                     </children>
-                  </GridPane>
+                  <Button fx:id="addButton" layoutX="50.0" layoutY="788.0" mnemonicParsing="false" onAction="#handleAdd" prefHeight="25.0" prefWidth="100.0" styleClass="pixel-button" text="Add Media">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="removeButton" layoutX="158.0" layoutY="788.0" mnemonicParsing="false" onAction="#handleRemove" prefHeight="25.0" prefWidth="129.0" styleClass="pixel-button" text="Remove Media">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="rateButton" layoutX="476.0" layoutY="788.0" mnemonicParsing="false" onAction="#handleRate" prefHeight="25.0" prefWidth="145.0" styleClass="pixel-button" text="Rate and Review">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="updateStatusButton" layoutX="291.0" layoutY="788.0" mnemonicParsing="false" onAction="#handleUpdateStatus" prefHeight="25.0" prefWidth="181.0" styleClass="pixel-button" text="Update Media Status">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font>
+                  </Button>
                   <GridPane layoutX="55.0" layoutY="826.0" prefHeight="13.0" prefWidth="681.0">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
@@ -311,7 +297,10 @@
                         </Button>
                      </children>
                   </GridPane>
-                  <Button fx:id="addFavoriteButton" layoutX="556.0" layoutY="47.0" mnemonicParsing="false" onAction="#handleFavorite" text="add Favorite" />
+                  <Button fx:id="addFavoriteButton" layoutX="624.0" layoutY="788.0" mnemonicParsing="false" onAction="#handleFavorite" prefHeight="25.0" prefWidth="120.0" text="Add Favorite">
+                     <font>
+                        <Font name="pixelmix Regular" size="12.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
          </children>
