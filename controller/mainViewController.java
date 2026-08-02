@@ -20,6 +20,7 @@ public class mainViewController {
     @FXML private Label bioLabel;
     @FXML private Label errorLabel;
     private SceneController sceneController;
+    private Stage mainStage;
     // @FXML private ListView<Media> library;
 
     /*
@@ -38,10 +39,23 @@ public class mainViewController {
     @FXML private Label game1, game2, game3;
     @FXML private Label disco1, disco2, disco3;
 
+    // para sa favorites
+    @FXML private Label movie11, movie21, movie31;
+    @FXML private Label game11, game21, game31;
+    @FXML private Label disco11, disco21, disco31;
+
     private Profile profile;
 
+    /**
+     * store profile/stage/scene controller, sets profile info in the labels,
+     * and updates recently added.
+     * @param profile contains profile that is currently being used
+     * @param stage contains the primary stage
+     * @param sceneController contains scene controller to navigate back to login
+     */
     public void init(Profile profile, Stage stage, SceneController sceneController) {
         this.profile = profile;
+        mainStage = stage;
         this.sceneController = sceneController;
         // Library lib = profile.getLibrary();
 
@@ -52,6 +66,9 @@ public class mainViewController {
         updateRecent();
     }
 
+    /**
+     * fill all labels with the 3 most recent media entries per type
+     */
     public void updateRecent() {
         Label[] movieBox = {movie1, movie2, movie3};
         Label[] gameBox = {game1, game2, game3};
@@ -78,6 +95,41 @@ public class mainViewController {
         fillBoxes(disco, discoBox);
     }
 
+    /**
+     * fill all labels with the 3 most recent favorited media entries per type
+     */
+    public void updateFavorites(){
+        Label[] favMovieBox = {movie11, movie21, movie31};
+        Label[] favGameBox = {game11, game21, game31};
+        Label[] favDiscoBox = {disco11, disco21, disco31};
+
+        List<Media> favMovies = new ArrayList<>();
+        List<Media> favGames = new ArrayList<>();
+        List<Media> favDisco = new ArrayList<>();
+
+        for (Media item : profile.getLibrary().getFavorites())
+        {
+            if (item instanceof Movie)
+                favMovies.add(item);
+
+            else if (item instanceof Videogame)
+                favGames.add(item);
+
+            else if (item instanceof MusicArtist)
+                favDisco.add(item);
+
+            fillBoxes(favMovies, favMovieBox);
+            fillBoxes(favGames, favGameBox);
+            fillBoxes(favDisco, favDiscoBox);
+        }
+    }
+
+    /**
+     * fills a fixed-size array of labels with the most recent items from
+     * a list (newest first), setting any remaining labels to a placeholder
+     * @param items the media items to display
+     * @param labels the fixed-size label array to fill (the 3 recent-activity/favorite boxes)
+     */
     private void fillBoxes(List<Media> items, Label[] labels) {
         int size = items.size();
         for (int i = 0; i < labels.length; i++)
@@ -93,6 +145,10 @@ public class mainViewController {
         }
     }
 
+    /**
+     * shows a temporary error message on screen for 3 seconds, then clears it
+     * @param message the error message to display
+     */
     private void showError(String message)
     {
         if (errorLabel != null) {
@@ -105,6 +161,11 @@ public class mainViewController {
         }
     }
 
+    /**
+     * opens the media type selection, then opens to the correct
+     * add-entry form (movie/videogame/music artist) based on the user's choice.
+     * does nothing if the user closes the type popup without choosing.
+     */
     public void handleAdd() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/mediaTypeView.fxml"));
@@ -116,21 +177,25 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait(); // pauses here until typeStage.close() runs
 
-            if (!typeController.isConfirmed()) return; // user closed without picking
+            if (!typeController.isConfirmed()) // user closed without picking
+                return;
 
+            // switch to add(media form) based on what user picked
             switch (typeController.getSelectedType()) {
                 case "model.Movie" -> addMovie();
                 case "model.Videogame" -> addVideogame();
                 case "Music Artist" -> addMusicArtist();
             }
         }
-
         catch (IOException e)
         {
             e.printStackTrace();
         }
     }
 
+    /**
+     * open addMovieView and adds the movie entry to library and refresh updateRecently
+     */
     public void addMovie() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addMovieView.fxml"));
@@ -145,7 +210,7 @@ public class mainViewController {
             if (!movieController.isConfirmed())
                 return;
 
-            profile.getLibrary().addEntry(movieController.getResult());
+            profile.getLibrary().addEntry(movieController.getResult()); // add entry to library
             updateRecent();
         }
 
@@ -155,6 +220,9 @@ public class mainViewController {
         }
     }
 
+    /**
+     * open addVideogameView and adds the videogame entry to library and refresh updateRecently
+     */
     public void addVideogame() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addVideogameView.fxml"));
@@ -166,9 +234,10 @@ public class mainViewController {
             movieStage.setScene(new Scene(root));
             movieStage.showAndWait();
 
-            if (!videogameController.isConfirmed()) return;
+            if (!videogameController.isConfirmed())
+                return;
 
-            profile.getLibrary().addEntry(videogameController.getResult());
+            profile.getLibrary().addEntry(videogameController.getResult()); // add entry to library
             updateRecent();
         }
 
@@ -178,6 +247,9 @@ public class mainViewController {
         }
     }
 
+    /**
+     * open addMusicArtistView and adds the music artist entry to library and refresh updateRecently
+     */
     public void addMusicArtist() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addMusicArtistView.fxml"));
@@ -189,9 +261,10 @@ public class mainViewController {
             artistStage.setScene(new Scene(root));
             artistStage.showAndWait();
 
-            if (!musicArtistController.isConfirmed()) return;
+            if (!musicArtistController.isConfirmed())
+                return;
 
-            profile.getLibrary().addEntry(musicArtistController.getResult());
+            profile.getLibrary().addEntry(musicArtistController.getResult()); // add entry to library
             updateRecent();
         }
 
@@ -200,6 +273,13 @@ public class mainViewController {
             e.printStackTrace();
         }
     }
+
+    /**
+     * opens the media type selection so user can choose which type to remove,
+     * checks that matching entries exist, then opens removeMediaView.
+     * if confirmed, removes the chosen entry from the library
+     * and refreshes updateRecent.
+     */
     public void handleRemove() {
         try {
             // get media type na idedelete
@@ -212,11 +292,13 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait();
 
-            if (!typeController.isConfirmed()) return; // close if di pumili
+            if (!typeController.isConfirmed())
+                return; // close if di pumili
 
             String type = typeController.getSelectedType();
             ArrayList<Media> matches = profile.getLibrary().filterByType(type);
 
+            // display error if no media entry for that type
             if (matches.isEmpty()) {
                 showError("No entries found for that media type.");
                 return;
@@ -233,9 +315,10 @@ public class mainViewController {
             removeStage.setScene(new Scene(removeRoot));
             removeStage.showAndWait();
 
-            if (!removeController.isConfirmed()) return;
+            if (!removeController.isConfirmed())
+                return;
 
-            // Step 3: remove and refresh
+            // remove entry and refresh
             profile.getLibrary().removeEntry(removeController.getSelectedEntry());
             updateRecent();
 
@@ -244,6 +327,9 @@ public class mainViewController {
         }
     }
 
+    /**
+     * opens displayFilterView, so the user can filter entries by status or media type
+     */
     public void handleFilter() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/displayFilterView.fxml"));
@@ -261,6 +347,10 @@ public class mainViewController {
         }
     }
 
+    /**
+     * filters the library to Completed entries and opens rateView.
+     * shows an error if there are no completed entries.
+     */
     public void handleRate() {
         try {
             // filter objects that are completed
@@ -271,6 +361,7 @@ public class mainViewController {
                 return;
             }
 
+            // load rateView
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/rateView.fxml"));
             Parent root = loader.load();
             rateController rateReviewController = loader.getController();
@@ -281,12 +372,16 @@ public class mainViewController {
             rateStage.setScene(new Scene(root));
             rateStage.showAndWait();
 
-            // rating/review are set directly on the Media object inside the controller
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     * opens the media type selection to choose which type to update, checks that matching entries exist,
+     * then opens updateStatusView on those entries. refreshes the recent-activity boxes if confirmed.
+     * shows an error if there are no entries of the chosen type.
+     */
     public void handleUpdateStatus() {
         try {
             // get media type (or wag na papiliin media type? lagay nalang lahat ng medias in the listview)
@@ -299,7 +394,8 @@ public class mainViewController {
             typeStage.setScene(new Scene(root));
             typeStage.showAndWait();
 
-            if (!typeController.isConfirmed()) return;
+            if (!typeController.isConfirmed())
+                return;
 
             // get filtered media objects
             String type = typeController.getSelectedType();
@@ -321,7 +417,8 @@ public class mainViewController {
             statusStage.setScene(new Scene(statusRoot));
             statusStage.showAndWait();
 
-            if (!statusController.isConfirmed()) return;
+            if (!statusController.isConfirmed())
+                return;
 
             updateRecent();
         } catch (IOException e) {
@@ -329,6 +426,11 @@ public class mainViewController {
         }
     }
 
+    /**
+     * filters the library down to Music Artist entries, casts to MusicArtist to use music
+     * artist methods, and opens updateDiscographyView. refreshes updateRecent if confirmed.
+     * shows an error if there are no artists in the library.
+     */
     public void handleUpdateDiscography() {
         try {
             // get only artists media objects in the library
@@ -344,7 +446,6 @@ public class mainViewController {
             for (Media media : matches) {
                 artists.add((MusicArtist) media);
             }
-
             
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/updateDiscographyView.fxml"));
             Parent root = loader.load();
@@ -356,7 +457,8 @@ public class mainViewController {
             discographyStage.setScene(new Scene(root));
             discographyStage.showAndWait();
 
-            if (!discographyController.isConfirmed()) return;
+            if (!discographyController.isConfirmed())
+                return;
 
             updateRecent();
         } catch (IOException e) {
@@ -364,6 +466,9 @@ public class mainViewController {
         }
     }
 
+    /**
+     * opens summaryView, which computes and displays entry counts and average completed rating
+     */
     public void handleSummary() {
         try {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/summaryView.fxml"));
@@ -382,6 +487,40 @@ public class mainViewController {
 
     }
 
+    /**
+     * opens addFavoriteView, then refreshes the favorites boxes once window closes.
+     * shows an error if the library has no entries yet.
+     */
+    public void handleFavorite(){
+            try {
+                // get media entries in library
+                ArrayList<Media> all = profile.getLibrary().getEntries();
+                if (all.isEmpty()) {
+                    showError("No entries in library yet.");
+                    return;
+                }
+
+                // load addFavoriteView
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("/view/addFavoriteView.fxml"));
+                Parent root = loader.load();
+                addFavoriteController favController = loader.getController();
+                favController.init(all);
+
+                Stage favStage = new Stage();
+                favStage.setTitle("Toggle Favorites");
+                favStage.setScene(new Scene(root));
+                favStage.showAndWait();
+
+                updateFavorites();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+    }
+
+    /**
+     * returns to login screen
+     */
     public void handleLogout() {
         sceneController.showLogin();
     }

@@ -23,6 +23,10 @@ public class addAlbumController {
     int trackCountValue; // for validation
     private boolean confirmed = false;
 
+    /**
+     * validates all input field, and if valid, stores the album details and closes the window.
+     * displays an error message and returns early if any field is invalid.
+     */
     public void handleConfirm() {
         String titleText = titleField.getText().trim();
         String genreText = genreField.getText().trim();
@@ -67,22 +71,42 @@ public class addAlbumController {
         stage.close();
     }
 
+    /**
+     * get the album title
+     * @return album title
+     */
     public String getTitle() {
         return title;
     }
 
+    /**
+     * get the album genre
+     * @return album genre
+     */
     public String getGenre() {
         return genre;
     }
 
+    /**
+     * get the album year released
+     * @return album year
+     */
     public int getYear() {
         return year;
     }
 
+    /**
+     * get the album track count
+     * @return track count
+     */
     public int getTrackCount() {
         return trackCount;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

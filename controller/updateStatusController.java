@@ -24,6 +24,10 @@ public class updateStatusController {
     private Media selectedEntry;
     private boolean confirmed = false;
 
+    /**
+     * populates list view with each entry's title and  status
+     * @param entries contains the media entries to display
+     */
     public void init(ArrayList<Media> entries) {
         this.entries = entries;
 
@@ -33,6 +37,11 @@ public class updateStatusController {
         }
     }
 
+    /**
+     * validates selected entry and new status, then update entry status and closes the window.
+     * displays an error message and returns early if selection/status is invalid, or
+     * if the entry cannot yet be marked Completed (incomplete discography).
+     */
     public void handleConfirm() {
         Status newStatus;
         int selectedIndex;
@@ -72,16 +81,27 @@ public class updateStatusController {
         stage.close();
     }
 
+    /**
+     * mark completed as false and closes the window
+     */
     public void handleCancel() {
         confirmed = false;
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     * get media entry whose status was updated
+     * @return selected entry
+     */
     public Media getSelectedEntry() {
         return selectedEntry;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

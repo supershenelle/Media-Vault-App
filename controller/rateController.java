@@ -19,6 +19,10 @@ public class rateController {
     private Media selectedEntry;
     private boolean confirmed = false;
 
+    /**
+     * populates list view with the titles of the entries
+     * @param entries contains the completed media entries available to rate/review
+     */
     public void init(ArrayList<Media> entries) {
         this.entries = entries;
 
@@ -27,6 +31,11 @@ public class rateController {
         }
     }
 
+    /**
+     * validates the selected entry and the rating input, then applies the
+     * rating and review to the selected media entry and closes the window.
+     * displays error message and returns if selection or rating is invalid.
+     */
     public void handleConfirm() {
         int selectedIndex;
         int rating;
@@ -59,6 +68,7 @@ public class rateController {
             return;
         }
 
+        // set review and set confirm to true
         entry.setReview(reviewField.getText().trim());
 
         selectedEntry = entry;
@@ -68,16 +78,27 @@ public class rateController {
         stage.close();
     }
 
+    /**
+     * set confirm to false, and closes the window
+     */
     public void handleCancel() {
         confirmed = false;
         Stage stage = (Stage) cancelButton.getScene().getWindow();
         stage.close();
     }
 
+    /**
+     *  get  media entry that was reviewed/rated
+     * @return media object
+     */
     public Media getSelectedEntry() {
         return selectedEntry;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

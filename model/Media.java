@@ -8,6 +8,7 @@ public abstract class Media {
     private Status status;
     private int rating;
     private String review;
+    private boolean favorite;
 
     /**
      * constructs shared media state
@@ -20,6 +21,7 @@ public abstract class Media {
         this.status = status;
         rating = 0;
         review = "";
+        favorite = false;
     }
 
     /**
@@ -79,6 +81,11 @@ public abstract class Media {
      */
     public boolean setRating(int rating)
     {
+        if (status != Status.COMPLETED) {
+            System.out.println("ERROR: Only completed entries can be rated.");
+            return false;
+        }
+
         if (rating < 1 || rating > 5)
         {
             System.out.println("ERROR: Input a number between 1 to 5 only");
@@ -140,6 +147,25 @@ public abstract class Media {
             info += "\nReview: " + review;
         }
         return info;
+    }
+
+    /**
+     * checks if media entry is marked as favorite
+     * @return true if favorite, false otherwise
+     */
+    public boolean isFavorite()
+    {
+        return favorite;
+    }
+
+    /**
+     * toggles the favorite status of the media entry
+     * @return new favorite status
+     */
+    public boolean toggleFavorite()
+    {
+        favorite = !favorite;
+        return favorite;
     }
 
     @Override

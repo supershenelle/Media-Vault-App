@@ -21,6 +21,10 @@ public class addVideogameController {
     private Videogame videogame;
     private boolean confirmed = false;
 
+    /**
+     * validates all fields and if valid, creates a new videogame with the chosen status
+     * and closes the window. displays an error message and returns early if any field is invalid.
+     */
     public void handleConfirm() {
         String title = titleField.getText().trim();
         String developer = developerField.getText().trim();
@@ -73,10 +77,18 @@ public class addVideogameController {
         stage.close();
     }
 
+    /**
+     * get videogame object
+     * @return videogame object
+     */
     public Videogame getResult() {
         return videogame;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

@@ -19,6 +19,10 @@ public class addMovieController {
     private Movie movie;
     private boolean confirmed = false;
 
+    /**
+     * validates all fields and if valid, creates a new Movie with the chosen status
+     * and closes the window. displays an error message and returns early if any field is invalid.
+     */
     public void handleConfirm() {
         String title = titleField.getText().trim();
         String director = directorField.getText().trim();
@@ -62,10 +66,18 @@ public class addMovieController {
         stage.close();
     }
 
+    /**
+     * get movie object
+     * @return movie object
+     */
     public Movie getResult() {
         return movie;
     }
 
+    /**
+     * check whether successfully confirmed
+     * @return true if confirmed, false otherwise
+     */
     public boolean isConfirmed() {
         return confirmed;
     }

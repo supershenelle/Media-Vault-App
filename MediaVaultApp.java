@@ -11,7 +11,7 @@ public class MediaVaultApp extends Application {
     @Override
     public void start(Stage primaryStage) {
         List<Profile> profiles = new ArrayList<>();
-        profiles.add(new Profile("shen", "Shen", "bio")); // temp, later loaded from file
+        // profiles.add(new Profile("shen", "Shen", "bio")); // temp, later loaded from file
 
         primaryStage.centerOnScreen(); // para magdisplay lang sa center ng screen m
         primaryStage.setMinWidth(800); // para di masyado maliit
@@ -23,8 +23,6 @@ public class MediaVaultApp extends Application {
         
         SceneController sceneController = new SceneController(primaryStage, profiles);
         sceneController.showLogin();
-        primaryStage.show();
-
 
     }
 
