@@ -17,6 +17,9 @@ public class addFavoriteController {
 
     private ArrayList<Media> entries;
 
+    /** 
+     * @param entries
+     */
     public void init(ArrayList<Media> entries) {
         this.entries = entries;
         refreshList();

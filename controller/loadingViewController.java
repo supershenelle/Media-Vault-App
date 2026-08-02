@@ -13,6 +13,9 @@ public class loadingViewController {
     @FXML private MediaView mediaView;
     private MediaPlayer mediaPlayer;
 
+    /** 
+     * @param onFinished
+     */
     public void startLoading(Runnable onFinished) {
         // 1. Get video path from resources
         URL videoUrl = getClass().getResource("/video/loading.mp4");

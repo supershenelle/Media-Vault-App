@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MediaVaultApp extends Application {
+    /** 
+     * @param primaryStage
+     */
     @Override
     public void start(Stage primaryStage) {
         List<Profile> profiles = new ArrayList<>();
@@ -34,6 +37,9 @@ public class MediaVaultApp extends Application {
 
     }
 
+    /** 
+     * @param args
+     */
     public static void main(String[] args) {
         launch(args);
     }
