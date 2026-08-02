@@ -47,7 +47,7 @@
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
-      <Label fx:id="detailsLabel" layoutX="59.0" layoutY="200.0" prefWidth="0.0" textFill="WHITE" />
+      <Label fx:id="detailsLabel" layoutX="59.0" layoutY="200.0" textFill="WHITE" />
       <Button fx:id="closeButton" layoutX="372.0" layoutY="341.0" mnemonicParsing="false" onAction="#handleClose" text="Close">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
