@@ -193,6 +193,9 @@ public class MusicArtist extends Media {
         return info;
     }
 
+    /** 
+     * @return boolean
+     */
     @Override
     protected boolean canComplete() {
     if (!isCompleted())
