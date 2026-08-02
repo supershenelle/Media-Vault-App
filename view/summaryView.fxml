@@ -27,7 +27,7 @@
             <Font name="04b25" size="29.0" />
          </font>
       </Label>
-      <Label fx:id="totalLabel" layoutX="36.0" layoutY="108.0" prefWidth="71.0" text="Total Entries: " textFill="WHITE">
+      <Label fx:id="totalLabel" layoutX="36.0" layoutY="108.0" text="Total Entries: " textFill="WHITE">
          <font>
             <Font name="pixelmix Regular" size="12.0" />
          </font></Label>
