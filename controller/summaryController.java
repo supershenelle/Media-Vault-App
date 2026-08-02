@@ -3,10 +3,13 @@ package controller;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import model.Library;
 import model.Media;
 import model.Status;
+
+import java.util.ArrayList;
 
 /**
  * controller for the summaryView.
@@ -20,6 +23,10 @@ public class summaryController {
     @FXML private Label completedLabel;
     @FXML private Label averageRatingLabel;
     @FXML private Button closeButton;
+    @FXML private ListView<String> entryListView;
+    @FXML private Label detailsLabel;
+
+    private ArrayList<Media> entries;
 
     int plannedCount = 0;
     int inProgressCount = 0;
@@ -32,6 +39,8 @@ public class summaryController {
      * @param library the library to summarize
      */
     public void init(Library library) {
+        
+        entries = library.getEntries();
 
         for (Media media : library.getEntries()) {
             if (media.getStatus() == Status.PLANNED)
@@ -47,6 +56,8 @@ public class summaryController {
                     completedRatingTotal += media.getRating();
                 }
             }
+
+            entryListView.getItems().add("[" + media.getType() + "] " + media.getTitle());
         }
 
         totalLabel.setText("Total Entries: " + library.getEntries().size());
@@ -61,6 +72,20 @@ public class summaryController {
             averageRatingLabel.setText("Average Rating (Completed): N/A");
         }
 
+    }
+
+    /**
+     * displays the full details (displayInfo()) of whichever entry is
+     * currently selected in the list view.
+     */
+    public void handleEntrySelection() {
+        int selectedIndex = entryListView.getSelectionModel().getSelectedIndex();
+
+        if (selectedIndex < 0 || selectedIndex >= entries.size())
+            return;
+
+        Media selected = entries.get(selectedIndex);
+        detailsLabel.setText(selected.displayInfo());
     }
 
     /**
